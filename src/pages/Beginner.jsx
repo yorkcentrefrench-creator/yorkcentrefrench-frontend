@@ -1,303 +1,303 @@
 import React from "react";
 
 const Beginner = () => {
-  // scroll to top on component mount
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
-    <div className="w-full">
+    <div className="w-full bg-white">
       {/* HERO SECTION */}
       <div
-        className="w-full h-[260px] md:h-[320px] flex flex-col items-center justify-center text-white text-center bg-cover bg-center"
+        className="w-full h-[280px] md:h-[360px] flex flex-col items-center justify-center text-white text-center bg-cover bg-center relative"
         style={{
           backgroundImage:
             "url('https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=1600')",
         }}
       >
-        <h1 className="text-2xl md:text-4xl font-bold">
-          Beginner French Classes in Brampton
-        </h1>
-        <p className="text-lg md:text-xl mt-2 font-medium">
-          Beginner’s Classes (A1 & A2)
-        </p>
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 px-4">
+          <h1 className="text-3xl md:text-5xl font-bold mb-2">
+            Beginner French Classes in Canada
+          </h1>
+          <p className="text-lg md:text-xl font-medium">
+            Level A1 – Absolute Beginners
+          </p>
+        </div>
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="max-w-4xl mx-auto px-4 py-10">
-        {/* Center Image */}
-        <div className="w-full flex justify-center mb-10">
+      <div className="max-w-5xl mx-auto px-4 py-12">
+        {/* INTRO SECTION */}
+        <div className="grid md:grid-cols-2 gap-10 items-center mb-14">
           <img
             src="https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            alt="French Teacher"
-            className="w-full md:w-[380px] rounded shadow"
+            alt="French Class"
+            className="rounded-xl shadow-lg"
           />
+
+          <div>
+            <h2 className="text-3xl font-bold mb-4">
+              Level A1 – Beginner French
+            </h2>
+            <p className="text-gray-700 leading-7 mb-4">
+              Start learning French with confidence at{" "}
+              <strong>York-Centre French Institute</strong>, one of the trusted
+              destinations for Beginner French classes in Canada. Our Level A1
+              course is specially designed for students with no prior knowledge
+              of French.
+            </p>
+            <p className="text-gray-700 leading-7">
+              Whether your goal is travel, career advancement, education, or
+              personal growth, this course builds strong foundations in
+              speaking, listening, reading, and writing.
+            </p>
+          </div>
         </div>
 
-        {/* Level A1 Heading */}
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">
-          Level A1 – Beginner
-        </h2>
+        {/* HIGHLIGHT INFO CARDS */}
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mb-14">
+          <div className="border rounded-xl p-6 text-center shadow-sm">
+            <h3 className="text-xl font-semibold mb-2">Course Level</h3>
+            <p className="text-gray-600">A1 – Absolute Beginner</p>
+          </div>
 
-        {/* Description */}
-        <p className="text-gray-700 leading-7 mb-6 text-justify">
-          Start your language journey with our expertly designed{" "}
-          <b>Beginner French Classes in Brampton</b>. At York-Center French Institute,
-          beginners receive step-by-step instruction that builds strong
-          foundations in reading, speaking, listening, and writing. Whether you
-          want to travel, communicate better at work, study abroad, or learn a
-          new skill, our A1 course prepares you for conversational French
-          quickly and efficiently.
-        </p>
+          <div className="border rounded-xl p-6 text-center shadow-sm">
+            <h3 className="text-xl font-semibold mb-2">Duration</h3>
+            <p className="text-red-600 font-semibold">
+              1.5 to 2 Months
+            </p>
+          </div>
 
-        <p className="text-gray-700 leading-7 mb-6 text-justify">
-          Our curriculum offers easy-to-follow lessons, interactive practice,
-          pronunciation support, vocabulary building, and grammar explanations
-          designed specifically for beginners. By the end of this level, you'll
-          be confident enough to introduce yourself, talk about daily routines,
-          describe people and objects, and communicate in simple French
-          sentences.
-        </p>
+          <div className="border rounded-xl p-6 text-center shadow-sm">
+            <h3 className="text-xl font-semibold mb-2">Location</h3>
+            <p className="text-gray-600">Canada</p>
+          </div>
+        </div>
 
-        <p className="text-red-600 font-semibold mb-8">
-          Approximate Duration: 5 to 6 months
-        </p>
-
-        {/* Course Summary */}
-        <h3 className="text-xl md:text-2xl font-bold mb-4">
-          French Classes for Beginners in Brampton – Course Summary
-        </h3>
-
-        <p className="text-gray-700 leading-7 mb-6">
-          Level A1 is the starting point for absolute beginners. This course
-          introduces you to the fundamentals of the French language, including
-          pronunciation, vocabulary, and simple grammar structures.
-        </p>
-
-        {/* What You'll Learn */}
-        <h4 className="text-xl font-semibold mb-2">What You’ll Learn</h4>
-
-        <ul className="list-disc ml-6 text-gray-700 leading-7 mb-6">
-          <li>
-            Basic vocabulary: greetings, numbers, dates, days of the week, and
-            everyday expressions.
-          </li>
-          <li>Fundamental sentence construction.</li>
-          <li>
-            Understanding simple grammar: gender (masculine/feminine) and number
-            (singular/plural).
-          </li>
-          <li>
-            Introduction to simple verbs (être, avoir, faire, aimer, etc.)
-          </li>
-          <li>Basic conjugation of regular and common irregular verbs.</li>
-          <li>Forming simple phrases and short dialogues.</li>
-          <li>Listening, speaking, reading, and writing practice.</li>
-        </ul>
-
-        {/* Prerequisites */}
-        <h4 className="text-xl font-semibold mb-2">Prerequisites</h4>
-        <p className="text-gray-700 leading-7 mb-10">
-          None. This level is designed for students with no prior knowledge of
-          French.
-        </p>
-
-        {/* Level A2 Section */}
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">
-          Level A2 – Elementary
-        </h2>
-
-        <p className="text-gray-700 leading-7 mb-6 text-justify">
-          Level A2 builds on A1 by introducing new vocabulary, longer sentences,
-          and improved communication skills. Students learn to talk about
-          familiar topics, express opinions, ask and answer simple questions,
-          and develop a better understanding of essential grammar rules.
-        </p>
-
-        <p className="text-red-600 font-semibold mb-8">
-          Approximate Duration: 5 to 6 months
-        </p>
-        {/* LEVEL A2 SECTION */}
-        <div className=" mx-auto  px-4">
-         
-
-          {/* COURSE SUMMARY */}
-          <h3 className="text-xl font-semibold mb-2">Course Summary</h3>
-          <p className="text-gray-700 mb-6 leading-relaxed">
-            Building on the basics, Level A2 expands your ability to communicate
-            in everyday situations and introduces more complex grammatical
-            structures.
-          </p>
-
-          {/* WHAT YOU WILL LEARN */}
-          <h3 className="text-xl font-semibold mb-3">What You'll Learn</h3>
-
-          <ul className="list-disc ml-6 text-gray-700 space-y-2 leading-relaxed">
-            <li>
-              <strong>Expanded Vocabulary:</strong> Topics include health,
-              hobbies, shopping, transportation, and daily routines.
-            </li>
-
-            <li>
-              <strong>Grammar Development:</strong>
-              <ul className="list-disc ml-6 mt-1 space-y-1">
-                <li>
-                  <strong>Past Tense:</strong> Introduction to passé composé for
-                  past actions.
-                </li>
-                <li>
-                  <strong>Future Tense:</strong> Using aller + infinitive for
-                  near future events.
-                </li>
-                <li>
-                  <strong>Reflexive Verbs:</strong> Describing daily routines
-                  and personal care.
-                </li>
-                <li>
-                  <strong>Adjectives & Adverbs:</strong> Improving descriptive
-                  expression.
-                </li>
-                <li>
-                  <strong>Prepositions:</strong> Talking about time and place.
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <strong>Communication Skills:</strong>
-              <ul className="list-disc ml-6 mt-1 space-y-1">
-                <li>
-                  Participating in conversations about personal experiences and
-                  future plans.
-                </li>
-                <li>Understanding longer and more complex spoken French.</li>
-                <li>Reading short stories, articles, and dialogues.</li>
-                <li>Writing personal letters, emails, and short narratives.</li>
-              </ul>
-            </li>
-
-            <li>
-              <strong>Cultural Exploration:</strong> Insight into
-              French-speaking regions, festivals, and traditions.
-            </li>
-          </ul>
-
-          {/* PREREQUISITES */}
-          <h3 className="text-xl font-semibold mt-10 mb-2">Prerequisites</h3>
-
-          <ul className="list-disc ml-6 text-gray-700 space-y-1 leading-relaxed">
-            <li>Completion of Level A1 or equivalent knowledge.</li>
-            <li>
-              Basic understanding of present tense verbs, simple sentence
-              construction, and elementary vocabulary.
-            </li>
-          </ul>
-
-          {/* FINAL PARAGRAPH */}
-          <p className="text-gray-700 mt-6 leading-relaxed">
-            Join York-Center French Institute Beginner French Classes in Brampton,
-            Ontario and take the first step toward mastering the French
-            language. Our French classes for beginners in Brampton are designed
-            to build your confidence in speaking, reading, writing, and
-            listening. With engaging lessons, expert instructors, and a
-            supportive atmosphere, learning French becomes easy and enjoyable.
-            Whether you're starting for personal interest, travel, or career
-            goals, our French classes for beginners in Brampton provide the
-            perfect foundation. Enroll today and begin your exciting language
-            journey!
+        {/* COURSE OVERVIEW */}
+        <div className="mb-12">
+          <h3 className="text-2xl font-bold mb-4">
+            French Course Overview – Level A1
+          </h3>
+          <p className="text-gray-700 leading-7">
+            This beginner French course introduces you to the essential elements
+            of the French language and culture in a clear, structured, and
+            supportive learning environment.
           </p>
         </div>
-      </div>
 
-      {/* NEXT LEVEL BUTTON */}
-      <div className="w-full flex justify-center my-8">
-        <a
-          href="/intermediate"
-          className="bg-red-600 text-white px-6 py-3 rounded font-semibold tracking-wide hover:bg-red-700 transition"
-        >
-          ➤ NEXT LEVEL (B1 INTERMEDIATE)
-        </a>
-      </div>
+        {/* WHAT YOU WILL LEARN */}
+        <div className="mb-12">
+          <h3 className="text-2xl font-bold mb-4">What You Will Learn</h3>
 
-      {/* CHAIR IMAGE */}
-  
-
-      {/* HEADING */}
-      <h2 className="text-3xl font-bold text-center mb-8">Courses</h2>
-
-      {/* COURSES GRID */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto px-4">
-        {/* Card 1 */}
-        <div className="flex flex-col items-center text-center">
-          <img
-                     src="https://images.pexels.com/photos/3762800/pexels-photo-3762800.jpeg?auto=compress&cs=tinysrgb&w=1600"
-
-            className="w-full rounded-xl mb-4"
-          />
-          <h3 className="text-lg font-semibold mb-1">A1 & A2</h3>
-          <a href="/beginner" className="text-red-600 font-medium">
-            READ MORE &gt;
-          </a>
+          <ul className="grid md:grid-cols-2 gap-4 list-disc ml-6 text-gray-700 leading-7">
+            <li>
+              Basic French vocabulary: greetings, numbers, days, colors, and
+              daily expressions
+            </li>
+            <li>French pronunciation and basic accent rules</li>
+            <li>
+              Grammar fundamentals: nouns, articles, gender, and subject
+              pronouns
+            </li>
+            <li>
+              Present tense of regular verbs and common verbs (être, avoir,
+              aller, faire)
+            </li>
+            <li>
+              Simple sentence formation: statements, questions, and negatives
+            </li>
+            <li>
+              Everyday conversations: self-introductions and basic exchanges
+            </li>
+            <li>Reading and writing short French texts</li>
+            <li>
+              Introduction to French culture and social etiquette
+            </li>
+          </ul>
         </div>
 
-        {/* Card 2 */}
-        <div className="flex flex-col items-center text-center">
-          <img
-            src="https://images.pexels.com/photos/3762800/pexels-photo-3762800.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            className="w-full rounded-xl mb-4"
-          />
-          <h3 className="text-lg font-semibold mb-1">B1 & B2</h3>
-          <a href="/intermediate" className="text-red-600 font-medium">
-            READ MORE &gt;
-          </a>
+        {/* PREREQUISITES */}
+        <div className="bg-gray-50 border rounded-xl p-8 mb-14">
+          <h3 className="text-2xl font-bold mb-3">Prerequisites</h3>
+          <p className="text-gray-700 leading-7">
+            No prior French knowledge required. This course is ideal for absolute
+            beginners.
+          </p>
         </div>
 
-        {/* Card 3 */}
-        <div className="flex flex-col items-center text-center">
-          <img
-            src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            className="w-full rounded-xl mb-4"
-          />
-          <h3 className="text-lg font-semibold mb-1">TEF & DELF Exam Prep</h3>
-          <a href="/exam" className="text-red-600 font-medium">
-            READ MORE &gt;
-          </a>
-        </div>
+        {/* ================= LEVEL A2 – ELEMENTARY ================= */}
+<div className="max-w-5xl mx-auto px-4 py-16">
+  {/* SECTION HEADER */}
+  <div className="text-center mb-12">
+    <h2 className="text-3xl md:text-4xl font-bold mb-3">
+      Elementary French Classes in Canada
+    </h2>
+    <p className="text-lg text-gray-600 font-medium">
+      Level A2 – Elementary | York-Centre French Institute
+    </p>
+  </div>
 
-        {/* Card 4 */}
-        <div className="flex flex-col items-center text-center">
-          <img
-            src="https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            className="w-full rounded-xl mb-4"
-          />
-          <h3 className="text-lg font-semibold mb-1">Professional (C2)</h3>
-          <a href="/professional" className="text-red-600 font-medium">
-            READ MORE &gt;
-          </a>
-        </div>
+  {/* INTRO + IMAGE */}
+  <div className="grid md:grid-cols-2 gap-10 items-center mb-14">
+    <div>
+      <p className="text-gray-700 leading-7 mb-4">
+        The <strong>Level A2 French course</strong> helps you expand your language
+        skills and communicate more comfortably in real-life situations. This
+        level focuses on improving fluency, vocabulary, and grammatical
+        accuracy.
+      </p>
 
-        {/* Card 5 */}
-        <div className="flex flex-col items-center text-center">
-          <img
-            src="https://images.pexels.com/photos/3184640/pexels-photo-3184640.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            className="w-full rounded-xl mb-4"
-          />
-          <h3 className="text-lg font-semibold mb-1">Group Classes</h3>
-          <a href="/group" className="text-red-600 font-medium">
-            READ MORE &gt;
-          </a>
-        </div>
+      <p className="text-gray-700 leading-7">
+        Students learn how to speak about past experiences, future plans, and
+        everyday topics with greater confidence while developing stronger
+        listening, reading, and writing skills.
+      </p>
+    </div>
 
-        {/* Card 6 */}
-        <div className="flex flex-col items-center text-center">
-          <img
-            src="https://images.pexels.com/photos/3184312/pexels-photo-3184312.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            className="w-full rounded-xl mb-4"
-          />
-          <h3 className="text-lg font-semibold mb-1">Private Tutoring</h3>
-          <a href="/private" className="text-red-600 font-medium">
-            READ MORE &gt;
-          </a>
+    <img
+      src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      alt="Elementary French Class"
+      className="rounded-xl shadow-lg"
+    />
+  </div>
+
+  {/* INFO CARDS */}
+  <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mb-14">
+    <div className="border rounded-xl p-6 text-center shadow-sm">
+      <h3 className="text-xl font-semibold mb-2">Course Level</h3>
+      <p className="text-gray-600">A2 – Elementary</p>
+    </div>
+
+    <div className="border rounded-xl p-6 text-center shadow-sm">
+      <h3 className="text-xl font-semibold mb-2">Duration</h3>
+      <p className="text-red-600 font-semibold">1.5 to 2 Months</p>
+    </div>
+
+    <div className="border rounded-xl p-6 text-center shadow-sm">
+      <h3 className="text-xl font-semibold mb-2">Location</h3>
+      <p className="text-gray-600">Canada</p>
+    </div>
+  </div>
+
+  {/* COURSE OVERVIEW */}
+  <div className="mb-12">
+    <h3 className="text-2xl font-bold mb-4">
+      French Course Overview – Level A2
+    </h3>
+    <p className="text-gray-700 leading-7">
+      This course builds on the foundations of Level A1 and introduces more
+      complex language structures, expanded vocabulary, and practical
+      communication skills for everyday situations.
+    </p>
+  </div>
+
+  {/* WHAT YOU WILL LEARN */}
+  <div className="mb-12">
+    <h3 className="text-2xl font-bold mb-4">What You Will Learn</h3>
+
+    <ul className="grid md:grid-cols-2 gap-4 list-disc ml-6 text-gray-700 leading-7">
+      <li>
+        Expanded vocabulary: hobbies, health, shopping, travel, and daily
+        routines
+      </li>
+      <li>Speaking about past experiences and future plans</li>
+      <li>Improved listening and reading comprehension</li>
+      <li>Writing short emails, messages, and descriptions</li>
+      <li>Understanding cultural aspects of French-speaking countries</li>
+    </ul>
+
+    {/* GRAMMAR SUBSECTION */}
+    <div className="mt-6 bg-gray-50 border rounded-xl p-6">
+      <h4 className="text-xl font-semibold mb-3">
+        Grammar Development
+      </h4>
+      <ul className="list-disc ml-6 text-gray-700 space-y-2">
+        <li>Passé composé (past tense)</li>
+        <li>Near future tense (aller + infinitive)</li>
+        <li>Reflexive verbs</li>
+        <li>Adjectives, adverbs, and prepositions</li>
+      </ul>
+    </div>
+  </div>
+
+  {/* PREREQUISITES */}
+  <div className="bg-gray-50 border rounded-xl p-8 mb-12">
+    <h3 className="text-2xl font-bold mb-3">Prerequisite</h3>
+    <p className="text-gray-700 leading-7">
+      Completion of Level A1 or basic knowledge of beginner French grammar.
+    </p>
+  </div>
+
+  {/* WHY CHOOSE US */}
+  <div className="mb-14">
+    <h3 className="text-2xl font-bold mb-4">
+      Why Choose York-Centre French Institute in Canada?
+    </h3>
+
+    <ul className="grid md:grid-cols-2 gap-4 list-disc ml-6 text-gray-700 leading-7">
+      <li>Experienced and qualified French instructors</li>
+      <li>Structured French courses for beginner and elementary learners</li>
+      <li>Strong focus on practical communication skills</li>
+      <li>Small group classes for personalized learning</li>
+      <li>Supportive and beginner-friendly environment</li>
+    </ul>
+  </div>
+
+  {/* CTA */}
+  <div className="text-center">
+    <a
+      href="/intermediate"
+      className="inline-block bg-red-600 text-white px-8 py-4 rounded-lg font-semibold tracking-wide hover:bg-red-700 transition"
+    >
+      ➤ Continue to Intermediate Level (B1)
+    </a>
+
+    <p className="text-gray-600 mt-4">
+      Enroll today and build confidence, improve fluency, and learn French step
+      by step in a welcoming learning environment.
+    </p>
+  </div>
+</div>
+
+
+        
+
+        {/* COURSES SECTION */}
+        <h2 className="text-3xl font-bold text-center mb-10">Our Courses</h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {[
+            { title: "A1 & A2", link: "/beginner" },
+            { title: "B1 & B2", link: "/intermediate" },
+            { title: "TEF & DELF Exam Prep", link: "/exam" },
+            { title: "Professional (C2)", link: "/professional" },
+            { title: "Group Classes", link: "/group" },
+            { title: "Private Tutoring", link: "/private" },
+          ].map((course, index) => (
+            <div
+              key={index}
+              className="border rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition"
+            >
+              <img
+                src="https://images.pexels.com/photos/3762800/pexels-photo-3762800.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                alt={course.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-5 text-center">
+                <h3 className="text-lg font-semibold mb-2">
+                  {course.title}
+                </h3>
+                <a
+                  href={course.link}
+                  className="text-red-600 font-medium hover:underline"
+                >
+                  READ MORE →
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

@@ -24,9 +24,11 @@ export default function Header() {
       <div className="container mx-auto flex items-center justify-between py-5 px-4">
 
         {/* LOGO */}
-        <div className="font-semibold text-lg leading-5">
+        <Link 
+        to ="/"
+        className="font-semibold text-lg leading-5">
           York-Center <span className="">French <br/> Institute</span>
-        </div>
+        </Link>
 
         {/* DESKTOP NAV */}
         <nav className="hidden lg:flex gap-8 font-semibold text-[15px] items-center">
@@ -71,7 +73,7 @@ export default function Header() {
           <Link to="/course-info">Classes</Link>
           <Link to="/whatsapp-community">Whatsapp Community</Link>
           <Link to="/contact">Contact Us</Link>
-          <Link to="/blog">Blog</Link>
+          {/* <Link to="/blog">Blog</Link> */}
           <Link to="/terms-and-conditions">Terms & Conditions</Link>
           <Link to="/privacy-policy">Privacy Policy</Link>
         </nav>

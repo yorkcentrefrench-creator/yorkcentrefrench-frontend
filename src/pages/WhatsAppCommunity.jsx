@@ -12,7 +12,7 @@ const WhatsAppCommunity = () => {
         {/* LEFT TEXT */}
         <div>
           <h1 className="text-3xl md:text-4xl font-bold text-red-600 mb-4 leading-snug">
-            Join the TFA French Learning Community on WhatsApp!
+            aJoin the TFA French Learning Community on WhatsApp!
           </h1>
 
           <p className="text-gray-600 mb-4">

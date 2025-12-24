@@ -17,11 +17,7 @@ const ReviewCard = ({ initial, name, date, review, stars = 5, color }) => {
           <p className="text-gray-500 text-sm">{date}</p>
         </div>
 
-        <img
-          src="https://www.gstatic.com/images/branding/product/1x/google_g_24dp.png"
-          className="w-5 ml-auto"
-          alt="google"
-        />
+        
       </div>
 
       {/* Stars */}
@@ -30,9 +26,7 @@ const ReviewCard = ({ initial, name, date, review, stars = 5, color }) => {
       {/* Review */}
       <p className="text-gray-700 mt-3 text-sm leading-relaxed">{review}</p>
 
-      <button className="mt-3 text-sm font-medium text-blue-600">
-        Read more
-      </button>
+     
     </div>
   );
 };

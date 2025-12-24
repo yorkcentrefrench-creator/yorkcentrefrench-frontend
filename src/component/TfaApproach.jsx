@@ -34,7 +34,7 @@ const TfaApproach = () => {
       {/* HEADER */}
       <div className="text-center mb-14 px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-red-600">
-          The TFA Teaching Approach
+          The YCF Teaching Approach
         </h2>
         <p className="mt-4 max-w-2xl mx-auto text-gray-600">
           A structured, exam-oriented methodology designed to help you reach

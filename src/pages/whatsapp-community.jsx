@@ -13,7 +13,7 @@ const WhatsappCommunity = () => {
         {/* LEFT CONTENT */}
         <div>
           <h1 className="text-3xl md:text-4xl font-bold text-red-600 leading-snug">
-            Join the TFA French Learning Community on WhatsApp!
+            Join the York-Center French Institute  Community on WhatsApp!
           </h1>
 
           <p className="mt-6 text-lg leading-relaxed">
