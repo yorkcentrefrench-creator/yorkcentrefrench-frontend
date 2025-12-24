@@ -24,6 +24,8 @@ function App() {
 
       <Routes>
         <Route path="/course-info" element={<CourseInfo />} />
+        <Route path="/" element={<CourseInfo />} />
+
         <Route path="/whatsapp-community" element={<WhatsappCommunity />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />

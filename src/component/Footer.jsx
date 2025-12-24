@@ -5,28 +5,29 @@ import {
   FaEnvelope,
   FaRegCalendarCheck,
   FaMapMarkerAlt,
-  FaAddressCard
+  FaAddressCard,
 } from "react-icons/fa";
 
 export default function Footer() {
   return (
     <footer className="bg-[#1d1d1d] text-white pt-6 pb-10 px-6">
-      
       {/* Disclaimer */}
       <div className="text-center mx-auto text-gray-300 text-[15px] leading-relaxed mb-10">
-        Disclaimer: Toronto French Academy (TFA) is a private language school and not a 
-        Designated Learning Institution (DLI). Our courses are non-accredited and do 
-        not provide immigration or academic certification. Students are responsible for 
-        maintaining their own immigration status. This website’s content is for educational 
-        purposes only and is not legal or immigration advice.
+        Disclaimer: York-Center French Institute is a private language school
+        and not a Designated Learning Institution (DLI). Our courses are
+        non-accredited and do not provide immigration or academic certification.
+        Students are responsible for maintaining their own immigration status.
+        This website’s content is for educational purposes only and is not legal
+        or immigration advice.
       </div>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-        
         {/* --- LEFT COLUMN --- */}
         <div>
           {/* Title */}
-          <h2 className="text-2xl font-bold mb-4">Toronto French Academy (TFA)</h2>
+          <h2 className="text-2xl font-bold mb-4">
+            York-Center French Institute
+          </h2>
 
           {/* Social Icons */}
           <div className="flex gap-4 text-xl mb-6">
@@ -89,26 +90,32 @@ export default function Footer() {
               <FaClock className="text-red-500" /> Mon - Fri : 9 am - 9 pm
             </li>
             <li className="flex items-center gap-3">
-              <FaEnvelope className="text-red-500" /> torontofrenchacademy@gmail.com
+              <FaEnvelope className="text-red-500" />{" "}
+yorkcentrefrench@gmail.com
             </li>
             <li className="flex items-center gap-3">
-              <FaRegCalendarCheck className="text-red-500" /> Book a Free Demo Class
-            </li>
-
-            <li className="flex items-center gap-3">
-              <FaMapMarkerAlt className="text-red-500" /> TFA – French Language School
+              <FaRegCalendarCheck className="text-red-500" /> Book a Free Demo
+              Class
             </li>
 
             <li className="flex items-center gap-3">
-              <FaAddressCard className="text-red-500" /> 499 Main Street, Brampton, ON L6Y 1N7, Canada
+              <FaMapMarkerAlt className="text-red-500" /> TFA – French Language
+              School
             </li>
 
             <li className="flex items-center gap-3">
-              <FaMapMarkerAlt className="text-red-500" /> TFA – French Classes Toronto
+              <FaAddressCard className="text-red-500" /> 499 Main Street,
+              Brampton, ON L6Y 1N7, Canada
             </li>
 
             <li className="flex items-center gap-3">
-              <FaAddressCard className="text-red-500" /> 3401 Dufferin St, North York, ON M6A 2T9, Canada
+              <FaMapMarkerAlt className="text-red-500" /> TFA – French Classes
+              Toronto
+            </li>
+
+            <li className="flex items-center gap-3">
+              <FaAddressCard className="text-red-500" /> 3401 Dufferin St, North
+              York, ON M6A 2T9, Canada
             </li>
           </ul>
         </div>

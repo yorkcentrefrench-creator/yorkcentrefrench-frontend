@@ -31,7 +31,7 @@ const PrivacyPolicy = () => {
           className="rounded-xl p-8 border border-gray-200"
         >
           <p className="mb-6 text-gray-700 leading-relaxed">
-            At <strong>Toronto French Academy</strong>, we respect and value your
+            At <strong>York-Center French Institute</strong>, we respect and value your
             privacy. This policy explains what data we collect, how we use it,
             and how we keep it secure.
           </p>
@@ -89,7 +89,10 @@ const PrivacyPolicy = () => {
             <p className="text-gray-700 leading-relaxed">
               For privacy-related questions, reach out to us at:
               <br />
-              <strong>Email:</strong> support@torontofrenchacademy.com
+              <strong>Email:</strong> 
+
+yorkcentrefrench@gmail.com
+
             </p>
           </div>
         </div>

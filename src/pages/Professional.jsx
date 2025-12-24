@@ -37,7 +37,7 @@ const Professional = () => {
         {/* CONTENT AFTER IMAGE */}
         <div className=" mx-auto text-center mt-10 leading-relaxed text-[17px] text-[#333]">
           <p className="mb-10">
-            <strong>Toronto French Academy</strong> offers expertly tailored
+            <strong>York-Center French Institute</strong> offers expertly tailored
             <strong> upper intermediate French classes in Brampton</strong>{" "}
             designed to refine your language skills and prepare you for advanced
             fluency. Our comprehensive
@@ -85,8 +85,7 @@ const Professional = () => {
             sessions with engaging activities to help you master both formal and
             informal communication.
             <strong> Enroll now</strong> to experience a unique blend of
-            interactive learning and professional support with Toronto French
-            Academy’s
+            interactive learning and professional support with York-Center French Institute
             <strong> upper intermediate French classes in Brampton!</strong>
           </p>
 
@@ -96,7 +95,7 @@ const Professional = () => {
           </h2>
 
           <p className="mb-10">
-            <strong>Toronto French Academy</strong> offers a comprehensive
+            <strong>York-Center French Institute</strong> offers a comprehensive
             <strong> B2 French course in Brampton</strong> combined with expert
             <strong> TEF preparation</strong> to help you achieve fluency and
             excel in language certifications. Our{" "}

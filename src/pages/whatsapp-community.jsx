@@ -22,7 +22,7 @@ const WhatsappCommunity = () => {
           </p>
 
           <p className="mt-5 text-lg leading-relaxed">
-            <span className="font-semibold">Toronto French Academy (TFA)</span> has just launched an 
+            <span className="font-semibold">York-Center French Institute</span> has just launched an 
             exclusive <span className="font-semibold">French Learning Community on WhatsApp</span>, and 
             we want YOU to be a part of it!
           </p>
@@ -150,7 +150,7 @@ const WhatsappCommunity = () => {
     </h2>
 
     <p className="text-lg leading-relaxed max-w-2xl mx-auto mb-10">
-      Toronto French Academy offers 
+      York-Center French Institute offers 
       <span className="font-semibold"> online one-on-one</span> 
       and small <span className="font-semibold">group classes</span> 
       specially designed for <span className="font-semibold">TEF Exam</span> preparation.

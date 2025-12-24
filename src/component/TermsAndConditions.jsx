@@ -38,7 +38,7 @@ const TermsAndConditions = () => {
         >
           <p className="mb-6 text-gray-700 leading-relaxed">
             These Terms & Conditions govern your use of the services provided by
-            <strong> Toronto French Academy</strong>. By accessing or using our
+            <strong> York-Center French Institute</strong>. By accessing or using our
             website and enrolling in our courses, you agree to the terms below.
           </p>
 
@@ -87,7 +87,7 @@ const TermsAndConditions = () => {
 
             <p className="text-gray-700 leading-relaxed">
               All course materials—notes, videos, worksheets, and resources—are
-              the property of Toronto French Academy. You may not copy,
+              the property of York-Center French Institute. You may not copy,
               distribute, or share them without written permission.
             </p>
           </div>
@@ -146,7 +146,10 @@ const TermsAndConditions = () => {
             <p className="text-gray-700 leading-relaxed">
               Email us with any questions at:
               <br />
-              <strong>support@torontofrenchacademy.com</strong>
+              <strong>
+yorkcentrefrench@gmail.com
+
+              </strong>
             </p>
           </div>
         </div>

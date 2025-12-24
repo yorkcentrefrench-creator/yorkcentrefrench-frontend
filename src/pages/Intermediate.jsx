@@ -42,7 +42,7 @@ const Intermediate = () => {
           </h2>
 
           <p className="text-gray-700 leading-relaxed mb-6">
-            Toronto French Academy offers expertly designed Intermediate French Classes in Brampton 
+            York-Center French Institute offers expertly designed Intermediate French Classes in Brampton 
             to help you take your French proficiency to the next level. B1 Intermediate classes focus 
             on enhancing your speaking, writing, listening, and reading skills while building confidence 
             through real-world communication. Whether you're preparing for travel, education, your career, 
@@ -56,7 +56,7 @@ const Intermediate = () => {
           </h3>
 
           <p className="text-gray-700 leading-relaxed mb-6">
-            At Toronto French Academy, we pride ourselves on delivering high-quality Intermediate French Classes 
+            At York-Center French Institute, we pride ourselves on delivering high-quality Intermediate French Classes 
             in Brampton that cater to the learning styles and daily lives of learners. Our experienced instructors 
             have years of teaching French to students from diverse backgrounds. Our easy-to-understand teaching 
             methods help each student master grammar, expand vocabulary, and improve fluency. By enrolling in our 
@@ -74,7 +74,7 @@ const Intermediate = () => {
             in-person options, and affordable pricing make learning accessible to everyone. Our Intermediate
             French Classes in Brampton not only prepare you for advanced language levels but also empower you
             to confidently communicate in French in any setting. Don’t wait—start your journey to fluency today
-            with Toronto French Academy!
+            with York-Center French Institute!
           </p>
 
           {/* INTERMEDIATE B1 SECTION */}

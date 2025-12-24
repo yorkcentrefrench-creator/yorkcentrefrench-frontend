@@ -20,7 +20,7 @@ const WhatsAppCommunity = () => {
           </p>
 
           <p className="text-gray-600 mb-4">
-            <strong>Toronto French Academy (TFA)</strong> has just launched an exclusive <strong>French Learning Community on WhatsApp</strong>, and we want YOU to be a part of it!
+            <strong>York-Center French Institute</strong> has just launched an exclusive <strong>French Learning Community on WhatsApp</strong>, and we want YOU to be a part of it!
           </p>
 
           <p className="text-gray-600">

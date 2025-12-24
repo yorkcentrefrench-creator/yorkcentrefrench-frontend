@@ -57,7 +57,7 @@ const PrivateTutoring = () => {
         </div>
         {/* content */}
         <div className="max-w-6xl text-gray-700 leading-relaxed mx-auto">
-          Toronto French Academy offers interactive and engaging French group
+          York-Center French Institute offers interactive and engaging French group
           classes in Brampton designed for learners of all levels. Whether you
           are a beginner or looking to enhance your fluency, our French group
           classes in Brampton provide a supportive and collaborative environment
@@ -249,7 +249,7 @@ const PrivateTutoring = () => {
       {/* ===================== WHY CHOOSE SECTION ===================== */}
       <div className="max-w-6xl mx-auto px-4 py-20">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
-          Why Choose Toronto French Academy (TFA) for French Group Classes in
+          Why Choose York-Center French Institute for French Group Classes in
           Brampton?
         </h2>
 

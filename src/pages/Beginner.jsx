@@ -42,7 +42,7 @@ const Beginner = () => {
         {/* Description */}
         <p className="text-gray-700 leading-7 mb-6 text-justify">
           Start your language journey with our expertly designed{" "}
-          <b>Beginner French Classes in Brampton</b>. At Toronto French Academy,
+          <b>Beginner French Classes in Brampton</b>. At York-Center French Institute,
           beginners receive step-by-step instruction that builds strong
           foundations in reading, speaking, listening, and writing. Whether you
           want to travel, communicate better at work, study abroad, or learn a
@@ -195,7 +195,7 @@ const Beginner = () => {
 
           {/* FINAL PARAGRAPH */}
           <p className="text-gray-700 mt-6 leading-relaxed">
-            Join Toronto French Academy’s Beginner French Classes in Brampton,
+            Join York-Center French Institute Beginner French Classes in Brampton,
             Ontario and take the first step toward mastering the French
             language. Our French classes for beginners in Brampton are designed
             to build your confidence in speaking, reading, writing, and
