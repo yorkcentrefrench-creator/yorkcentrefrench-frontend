@@ -9,6 +9,11 @@ import {
 } from "react-icons/fi";
 
 const TermsAndConditions = () => {
+  // scroll to top 
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="w-full">
       {/* TOP BANNER */}
@@ -38,8 +43,9 @@ const TermsAndConditions = () => {
         >
           <p className="mb-6 text-gray-700 leading-relaxed">
             These Terms & Conditions govern your use of the services provided by
-            <strong> York-Center French Institute</strong>. By accessing or using our
-            website and enrolling in our courses, you agree to the terms below.
+            <strong> York-Center French Institute</strong>. By accessing or
+            using our website and enrolling in our courses, you agree to the
+            terms below.
           </p>
 
           {/* SECTION 1 */}
@@ -146,10 +152,7 @@ const TermsAndConditions = () => {
             <p className="text-gray-700 leading-relaxed">
               Email us with any questions at:
               <br />
-              <strong>
-yorkcentrefrench@gmail.com
-
-              </strong>
+              <strong>yorkcentrefrench@gmail.com</strong>
             </p>
           </div>
         </div>

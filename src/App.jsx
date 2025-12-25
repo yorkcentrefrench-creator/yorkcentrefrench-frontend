@@ -37,7 +37,7 @@ function App() {
         <Route path="/private-tutoring" element={<PrivateTutoring />} />
         <Route path="/professional-tef" element={<ProfessionalTEF />} />
         <Route path="/exam-preparation" element={<ExamPrep />} />
-        <Route path="/blog" element={<Blog />} />
+        {/* <Route path="/blog" element={<Blog />} /> */}
         <Route path="/contact" element={<Contact/>} />
         <Route path="/faq" element={<FAQSection/>} />
         <Route path="/about" element={<AboutUs/>} />

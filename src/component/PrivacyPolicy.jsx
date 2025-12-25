@@ -2,6 +2,9 @@ import React from "react";
 import { FiFileText, FiShield, FiLock, FiMail } from "react-icons/fi";
 
 const PrivacyPolicy = () => {
+   React.useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   return (
     <div className="w-full">
       {/* TOP BANNER */}

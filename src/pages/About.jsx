@@ -11,6 +11,9 @@ import {
 } from "react-icons/fi";
 
 const AboutUs = () => {
+   React.useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   return (
     <div className="w-full text-gray-800">
       {/* HERO SECTION */}

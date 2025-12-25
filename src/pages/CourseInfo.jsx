@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   FaLaptopCode,
   FaBolt,
@@ -13,7 +13,7 @@ import ReviewCard from "../component/ReviewCard";
 import FAQSection from "../component/FAQSection";
 import { useNavigate } from "react-router-dom";
 import { loadRazorpay } from "../utils/razorpay";
-
+import DemoModal from "../component/DemoModal";
 const reviews = [
   {
     initial: "M",
@@ -46,11 +46,11 @@ const CourseInfo = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  const [openDemo, setOpenDemo] = useState(false);
   return (
     <div className="w-full bg-white text-gray-800">
       {/* ================= HERO ================= */}
-      <section className="bg-gradient-to-br from-red-50 to-white py-20">
+      <section className="bg-gradient-to-br from-red-50 to-white ">
         <div className="max-w-7xl mx-auto px-4 md:px-8 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">
@@ -71,13 +71,16 @@ const CourseInfo = () => {
               preparation and secure Canadian PR confidently.
             </p>
 
-            <button className="mt-8 bg-red-500 hover:bg-red-600 text-white font-semibold px-8 py-3 rounded-lg shadow hover:shadow-lg transition">
+           <button
+              onClick={() => setOpenDemo(true)}
+              className="mt-8 bg-red-500 hover:bg-red-600 text-white font-semibold px-8 py-3 rounded-lg shadow hover:shadow-lg transition"
+            >
               Book Free Demo
             </button>
           </div>
 
           {/* Image */}
-          <div className="relative">
+          <div className="relative py-5">
             <img
             src="./student.jpg"
               alt="Students learning French"
@@ -91,6 +94,7 @@ const CourseInfo = () => {
           </div>
         </div>
       </section>
+      <DemoModal open={openDemo} onClose={() => setOpenDemo(false)} />
 
       {/* ================= WHAT WE OFFER ================= */}
       <section className="py-20">
