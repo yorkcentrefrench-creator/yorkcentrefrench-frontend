@@ -16,6 +16,7 @@ import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import FAQSection from "./component/FAQSection";
 import AboutUs from "./pages/About";
+import PaymentSuccess from "./pages/PaymentSuccess";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
         <Route path="/contact" element={<Contact/>} />
         <Route path="/faq" element={<FAQSection/>} />
         <Route path="/about" element={<AboutUs/>} />
+         <Route path="/payment-success" element={<PaymentSuccess />} />
 
 
 

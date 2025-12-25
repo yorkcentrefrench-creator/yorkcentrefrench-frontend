@@ -26,8 +26,8 @@ export default function Header() {
         {/* LOGO */}
         <Link 
         to ="/"
-        className="font-semibold text-lg leading-5">
-          York-Center <span className="">French <br/> Institute</span>
+        className="font-semibold text-lg leading-5 ">
+          York-Center <span className="">French  Institute</span>
         </Link>
 
         {/* DESKTOP NAV */}
