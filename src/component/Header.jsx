@@ -28,7 +28,7 @@ export default function Header() {
   <img
     src="/logo2.svg"
     alt="York-Center French Institute"
-    className="h-16 md:h-20 w-auto object-contain"
+    className="h-16 md:h-16 w-auto object-contain"
   />
 
   
