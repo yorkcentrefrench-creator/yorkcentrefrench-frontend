@@ -43,7 +43,7 @@ export default function Footer() {
 
             {/* Social Icons */}
             <div className="flex gap-4 text-lg mb-6">
-              {[FaInstagram, FaYoutube, FaLinkedinIn].map((Icon, i) => (
+              {[FaInstagram, FaLinkedinIn].map((Icon, i) => (
                 <a
                   key={i}
                   href="#"

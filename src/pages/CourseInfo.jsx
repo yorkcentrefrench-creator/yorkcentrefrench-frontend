@@ -227,6 +227,17 @@ const CourseInfo = () => {
               "A1 to B2 Levels",
             ]}
           />
+           <PricingCard
+            title="Weekly speaking classes"
+            price="$150"
+            duration="6–8 Months"
+            features={[
+              "8 Classes / Month",
+              "Fast-Track Learning",
+              "1:1 Intensive Coaching",
+              "A1 to B2 levels ",
+            ]}
+          />
         </div>
       </section>
 

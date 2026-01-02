@@ -44,18 +44,14 @@ const Contact = () => {
             {
               icon: <FaMapMarkerAlt />,
               title: "Our Address",
-              text: "221B Baker Street, London, United Kingdom",
+              text: " Toronto, Ontario, Canada",
             },
             {
               icon: <FaEnvelope />,
               title: "Email Us",
               text: "yorkcentrefrench@gmail.com",
             },
-            {
-              icon: <FaPhoneAlt />,
-              title: "Call Us",
-              text: "+91 98765 43210",
-            },
+            
           ].map((item, i) => (
             <div
               key={i}

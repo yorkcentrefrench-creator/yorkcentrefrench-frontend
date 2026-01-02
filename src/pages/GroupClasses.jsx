@@ -30,26 +30,26 @@ const GroupClasses = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full bg-gray-50">
       {/* ================= HERO ================= */}
-      <div
-        className="w-full h-[260px] md:h-[380px] flex flex-col items-center justify-center text-white text-center bg-cover bg-center"
+      <section
+        className="relative w-full h-[280px] md:h-[420px] flex flex-col items-center justify-center text-white text-center bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=1600')",
+            "linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=1600')",
         }}
       >
-        <h1 className="text-3xl md:text-6xl font-bold">
+        <h1 className="text-3xl md:text-6xl font-extrabold tracking-tight">
           French Group Classes in Canada
         </h1>
-        <p className="text-lg md:text-3xl mt-3 font-medium">
+        <p className="text-lg md:text-2xl mt-4 font-medium text-white/90">
           Interactive • Affordable • Result-Driven
         </p>
-      </div>
+      </section>
 
-      {/* ================= INTRO ================= */}
-      <div className="max-w-6xl mx-auto px-6 py-16 text-gray-700 leading-relaxed">
-        <p className="text-lg mb-10">
+      {/* ================= CONTENT ================= */}
+      <section className="max-w-6xl mx-auto px-6 py-20 text-gray-700">
+        <p className="text-lg leading-relaxed mb-12">
           <strong>York-Centre French Institute</strong> offers professionally guided
           <strong> French Group Classes in Canada</strong> designed to help learners
           build fluency through structured lessons and interactive group practice.
@@ -59,110 +59,103 @@ const GroupClasses = () => {
         </p>
 
         <img
-          src="https://frenchforpr.com/wp-content/uploads/2025/01/Intermediate-French-Classes-in-Brampton-.png"
+          src="https://frenchforpr.com/wp-content/uploads/2025/01/Intermediate-French-Classes-in-Canadan-.png"
           alt="French Group Learning"
-          className="rounded-xl shadow mb-16"
+          className="rounded-2xl shadow-xl mb-20 mx-auto"
         />
 
-        {/* ================= WHY CHOOSE US ================= */}
-        <h2 className="text-3xl font-bold text-center mb-6">
-          French Group Classes in Canada – York-Centre French Institute
+        {/* ================= WHY CHOOSE ================= */}
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
+          French Group Classes in Canada
         </h2>
 
-        <p className="text-lg mb-6 text-center max-w-4xl mx-auto">
+        <p className="text-lg text-center max-w-4xl mx-auto mb-6">
           Discover an engaging and collaborative way to learn French with our
           <strong> French Group Classes in Canada</strong>. Designed for learners
           at all levels, our group classes offer the perfect balance of structured
-          instruction and interactive practice in a supportive learning
-          environment.
+          instruction and interactive practice.
         </p>
 
-        <p className="text-lg mb-12 text-center max-w-4xl mx-auto">
+        <p className="text-lg text-center max-w-4xl mx-auto mb-16">
           Whether you are starting as a beginner or aiming to improve fluency,
           our French group classes in Canada help you build strong speaking,
-          listening, reading, and writing skills while gaining confidence for
-          real-life communication.
+          listening, reading, and writing skills.
         </p>
 
-        <h3 className="text-2xl font-semibold mb-6 text-center">
+        <h3 className="text-2xl font-semibold text-center mb-10">
           Why Choose Our French Group Classes in Canada?
         </h3>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <ul className="list-disc pl-6 space-y-3">
-            <li>Preparation for DELF, TEF, and TCF exams</li>
-            <li>French for career advancement and immigration</li>
-            <li>Improved conversational confidence</li>
+        <div className="grid md:grid-cols-2 gap-10 mb-20">
+          <ul className="space-y-4 bg-white p-8 rounded-xl shadow">
+            <li>✔ Preparation for DELF, TEF, and TCF exams</li>
+            <li>✔ French for career advancement and immigration</li>
+            <li>✔ Improved conversational confidence</li>
           </ul>
 
-          <ul className="list-disc pl-6 space-y-3">
-            <li>Small group sizes for personalized attention</li>
-            <li>Affordable and interactive learning</li>
-            <li>Experienced, certified instructors</li>
+          <ul className="space-y-4 bg-white p-8 rounded-xl shadow">
+            <li>✔ Small group sizes for personalized attention</li>
+            <li>✔ Affordable and interactive learning</li>
+            <li>✔ Experienced, certified instructors</li>
           </ul>
         </div>
 
-        <h3 className="text-2xl font-semibold mb-6 text-center">
+        {/* ================= IMMERSIVE ================= */}
+        <h3 className="text-2xl font-semibold text-center mb-6">
           Interactive & Immersive Group Learning
         </h3>
 
-        <p className="text-lg mb-6 text-center max-w-4xl mx-auto">
+        <p className="text-lg text-center max-w-4xl mx-auto mb-6">
           Our Group French Classes in Canada provide an immersive learning
           experience where students practice French with peers at the same
-          proficiency level. Role-plays, real-life scenarios, discussions, and
-          practical exercises help learners develop natural communication skills
-          and fluency.
+          proficiency level.
         </p>
 
-        <p className="text-lg mb-20 text-center max-w-4xl mx-auto">
-          You also become part of a supportive learning community that motivates
-          progress, builds confidence, and encourages consistent improvement.
+        <p className="text-lg text-center max-w-4xl mx-auto mb-20">
+          You become part of a supportive learning community that motivates
+          progress and builds confidence.
         </p>
 
         {/* ================= WHO IS THIS FOR ================= */}
-        <h2 className="text-3xl font-bold text-center mb-8">
+        <h2 className="text-3xl font-bold text-center mb-10">
           Who Are These French Group Classes For?
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-20">
-          <ul className="list-disc pl-6 space-y-3">
-            <li>Beginners (A1–A2)</li>
-            <li>Intermediate learners (B1–B2)</li>
-            <li>Students preparing for TEF, DELF, or TCF</li>
+        <div className="grid md:grid-cols-2 gap-10 mb-24">
+          <ul className="bg-white p-8 rounded-xl shadow space-y-3">
+            <li>• Beginners (A1–A2)</li>
+            <li>• Intermediate learners (B1–B2)</li>
+            <li>• Students preparing for TEF, DELF, or TCF</li>
           </ul>
-          <ul className="list-disc pl-6 space-y-3">
-            <li>Professionals seeking bilingual careers</li>
-            <li>Immigration applicants to Canada & Quebec</li>
-            <li>Learners who enjoy collaborative learning</li>
+          <ul className="bg-white p-8 rounded-xl shadow space-y-3">
+            <li>• Professionals seeking bilingual careers</li>
+            <li>• Immigration applicants to Canada & Quebec</li>
+            <li>• Learners who enjoy collaborative learning</li>
           </ul>
         </div>
 
-        {/* ================= CLASS DETAILS ================= */}
-        <div className="bg-red-600 text-white rounded-xl shadow-lg p-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center mb-20">
-          <div>
-            <p className="font-semibold">📅 Schedule</p>
-            <p>Weekly Classes</p>
-          </div>
-          <div>
-            <p className="font-semibold">👥 Class Size</p>
-            <p>Max 12 Students</p>
-          </div>
-          <div>
-            <p className="font-semibold">⏳ Duration</p>
-            <p>2 Hours / Session</p>
-          </div>
-          <div>
-            <p className="font-semibold">👨‍🏫 Instructor</p>
-            <p>Certified Trainers</p>
-          </div>
+        {/* ================= DETAILS ================= */}
+        <div className="bg-gradient-to-r from-red-500 to-red-600 text-white rounded-2xl p-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center mb-24 shadow-xl">
+          {[
+            ["📅", "Schedule", "Weekly Classes"],
+            ["👥", "Class Size", "Max 12 Students"],
+            ["⏳", "Duration", "2 Hours / Session"],
+            ["👨‍🏫", "Instructor", "Certified Trainers"],
+          ].map(([icon, title, text], i) => (
+            <div key={i}>
+              <p className="text-3xl">{icon}</p>
+              <p className="font-semibold">{title}</p>
+              <p className="text-sm">{text}</p>
+            </div>
+          ))}
         </div>
 
         {/* ================= WHAT YOU LEARN ================= */}
-        <h2 className="text-3xl font-bold text-center mb-8">
+        <h2 className="text-3xl font-bold text-center mb-10">
           What You Will Learn
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-24">
+        <div className="grid md:grid-cols-3 gap-8 mb-24">
           {[
             "Speak confidently in daily & professional situations",
             "Understand native French conversations",
@@ -173,84 +166,58 @@ const GroupClasses = () => {
           ].map((item, i) => (
             <div
               key={i}
-              className="p-6 bg-white rounded-xl shadow hover:shadow-xl transition"
+              className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition"
             >
               ✔ {item}
             </div>
           ))}
         </div>
-
-        {/* ================= GOALS ================= */}
-        <h2 className="text-3xl font-bold text-center mb-10">
-          Our Group Class Goals
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-6 mb-24">
-          <div className="p-6 bg-white rounded-xl shadow">
-            <h3 className="font-semibold mb-2">🎯 TEF & DELF Preparation</h3>
-            <p className="text-sm text-gray-600">
-              Targeted exam practice, strategies, and feedback for success.
-            </p>
-          </div>
-
-          <div className="p-6 bg-red-600 text-white rounded-xl shadow">
-            <h3 className="font-semibold mb-2">🌍 Language Immersion</h3>
-            <p className="text-sm">
-              Interactive speaking, role-plays, discussions, and cultural exposure.
-            </p>
-          </div>
-
-          <div className="p-6 bg-white rounded-xl shadow">
-            <h3 className="font-semibold mb-2">💼 Professional Growth</h3>
-            <p className="text-sm text-gray-600">
-              Business French, workplace communication, and confidence building.
-            </p>
-          </div>
-        </div>
-      </div>
+      </section>
 
       {/* ================= CTA ================= */}
-      <div className="bg-red-600 text-white py-16 text-center">
+      <section className="bg-red-600 text-white py-20 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
           Ready to Join French Group Classes in Canada?
         </h2>
-        <p className="max-w-2xl mx-auto mb-6 text-lg">
+        <p className="max-w-2xl mx-auto mb-8 text-lg">
           Learn faster with expert instructors, interactive learning, and proven
           results.
         </p>
         <a
           href="/contact"
-          className="bg-white text-red-600 px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition"
+          className="inline-block bg-white text-red-600 px-10 py-4 rounded-lg font-semibold shadow hover:scale-105 transition"
         >
           ENROLL TODAY →
         </a>
-      </div>
+      </section>
 
       {/* ================= FAQ ================= */}
-      <div className="max-w-4xl mx-auto px-6 py-20">
-        <h2 className="text-3xl font-bold text-center mb-8">
+      <section className="max-w-4xl mx-auto px-6 py-20">
+        <h2 className="text-3xl font-bold text-center mb-10">
           Frequently Asked Questions
         </h2>
 
         {faqs.map((faq, idx) => (
           <div
             key={idx}
-            className="border rounded-lg mb-4 shadow cursor-pointer"
+            className="bg-white rounded-xl mb-4 shadow hover:shadow-lg transition"
           >
             <button
               onClick={() => toggle(idx)}
-              className="w-full flex justify-between items-center p-6 font-medium"
+              className="w-full flex justify-between items-center p-6 font-semibold"
             >
               {faq.question}
-              <span>{openIdx === idx ? "−" : "+"}</span>
+              <span className="text-xl">{openIdx === idx ? "−" : "+"}</span>
             </button>
 
             {openIdx === idx && (
-              <div className="px-6 pb-6 text-gray-600">{faq.answer}</div>
+              <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                {faq.answer}
+              </div>
             )}
           </div>
         ))}
-      </div>
+      </section>
     </div>
   );
 };

@@ -24,19 +24,16 @@ export default function Header() {
         
         {/* ================= LOGO ================= */}
       {/* ================= LOGO + TEXT ================= */}
-<Link to="/" className="flex items-center gap-3 text-left
-">
+<Link to="/" className="flex items-center gap-4 text-left">
   <img
-    src="/logo.png"
+    src="/logo2.svg"
     alt="York-Center French Institute"
-    className="h-14 w-auto object-contain"
+    className="h-16 md:h-20 w-auto object-contain"
   />
 
- <div className="font-bold text-gray-900 text-base md:text-lg">
-  York-Center <span className="text-red-500">French Institute</span>
-</div>
-
+  
 </Link>
+
 
 
         {/* ================= DESKTOP NAV ================= */}
@@ -66,8 +63,8 @@ export default function Header() {
                   { path: "/professional", label: "PROFESSIONAL (B2)" },
                   { path: "/group-classes", label: "GROUP CLASSES" },
                   { path: "/private-tutoring", label: "PRIVATE TUTORING" },
-                  { path: "/professional-tef", label: "PROFESSIONAL (B2 + TEF)" },
-                  { path: "/exam-preparation", label: "TEF & DELF EXAM PREPARATION" },
+                  // { path: "/professional-tef", label: "PROFESSIONAL (B2 + TEF)" },
+                  { path: "/professional-tef", label: "TEF & DELF EXAM PREPARATION" },
                 ].map((item, index) => (
                   <Link
                     key={index}
