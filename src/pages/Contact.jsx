@@ -1,20 +1,75 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   FaMapMarkerAlt,
   FaEnvelope,
-  FaPhoneAlt,
   FaPaperPlane,
-  FaFacebookF,
-  FaInstagram,
   FaTwitter,
   FaLinkedinIn,
   FaYoutube,
 } from "react-icons/fa";
 
 const Contact = () => {
-  React.useEffect(() => {
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [popup, setPopup] = useState(null); // success | error
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!formData.name || !formData.email || !formData.message) {
+      setPopup({ type: "error", text: "Please fill all required fields" });
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      const response = await fetch(
+        "https://york-centre-api.onrender.com/contact",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to send message");
+      }
+
+      setPopup({ type: "success", text: "Message sent successfully!" });
+
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+
+      setTimeout(() => setPopup(null), 3000);
+
+    } catch (error) {
+      setPopup({ type: "error", text: error.message });
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -44,19 +99,18 @@ const Contact = () => {
             {
               icon: <FaMapMarkerAlt />,
               title: "Our Address",
-              text: " Toronto, Ontario, Canada",
+              text: "Toronto, Ontario, Canada",
             },
             {
               icon: <FaEnvelope />,
               title: "Email Us",
               text: "yorkcentrefrench@gmail.com",
             },
-            
           ].map((item, i) => (
             <div
               key={i}
-              className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl
-              hover:-translate-y-1 transition-all duration-300"
+              className="bg-white rounded-2xl p-8 text-center shadow-lg
+              hover:shadow-2xl hover:-translate-y-1 transition-all"
             >
               <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-red-100
               text-red-600 flex items-center justify-center text-2xl">
@@ -78,15 +132,35 @@ const Contact = () => {
               Send Us a Message
             </h2>
 
-            <form className="space-y-5">
+            {/* POPUP */}
+            {popup && (
+              <div
+                className={`mb-5 px-4 py-3 rounded text-sm font-medium
+                ${
+                  popup.type === "success"
+                    ? "bg-emerald-100 text-emerald-700"
+                    : "bg-red-100 text-red-700"
+                }`}
+              >
+                {popup.text}
+              </div>
+            )}
+
+            <form className="space-y-5" onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-5">
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   placeholder="Your Name"
                   className="border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500"
                 />
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="Your Email"
                   className="border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500"
                 />
@@ -94,23 +168,31 @@ const Contact = () => {
 
               <input
                 type="text"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
                 placeholder="Subject"
                 className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500"
               />
 
               <textarea
                 rows="5"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Your Message"
                 className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500"
               ></textarea>
 
               <button
                 type="submit"
+                disabled={loading}
                 className="w-full bg-red-500 hover:bg-red-600 text-white
                 font-semibold py-3 rounded-lg flex items-center justify-center
-                gap-2 transition shadow-lg hover:shadow-xl"
+                gap-2 transition shadow-lg hover:shadow-xl disabled:opacity-60"
               >
-                <FaPaperPlane /> Send Message
+                <FaPaperPlane />
+                {loading ? "Sending..." : "Send Message"}
               </button>
             </form>
           </div>
@@ -139,9 +221,7 @@ const Contact = () => {
           </p>
 
           <div className="flex justify-center gap-6 flex-wrap">
-            {[ 
-              // { icon: <FaFacebookF />, color: "hover:bg-blue-600" },
-              // { icon: <FaInstagram />, color: "hover:bg-pink-600" },
+            {[
               { icon: <FaTwitter />, color: "hover:bg-blue-400" },
               { icon: <FaLinkedinIn />, color: "hover:bg-blue-700" },
               { icon: <FaYoutube />, color: "hover:bg-red-600" },
@@ -150,7 +230,7 @@ const Contact = () => {
                 key={i}
                 className={`bg-white p-5 rounded-full shadow-md
                 hover:shadow-xl ${item.color} hover:text-white
-                transition-all duration-300 cursor-pointer text-xl`}
+                transition-all cursor-pointer text-xl`}
               >
                 {item.icon}
               </div>

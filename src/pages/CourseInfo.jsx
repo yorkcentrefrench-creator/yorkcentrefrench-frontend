@@ -185,61 +185,73 @@ const CourseInfo = () => {
       </section>
 
       {/* ================= PRICING ================= */}
-      <section className="py-20">
-        <h2 className="text-center text-3xl md:text-4xl font-bold mb-12">
-          Online French Class Options
-        </h2>
+<section className="py-24 bg-gradient-to-br from-slate-50 via-white to-indigo-50">
+  <div className="max-w-7xl mx-auto px-4">
+    <h2 className="text-center text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+      Online French Class Plans
+    </h2>
 
-        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 px-4">
-          <PricingCard
-            title="Group Classes"
-            price="$270"
-            duration="10–12 Months"
-            features={[
-              "20 Classes / Month",
-              "Mon–Fri (8–9 PM EST)",
-              "Group Size: 4–5",
-              "A1 to B2 Levels",
-            ]}
-          />
+    <p className="text-center text-slate-600 mb-16 max-w-2xl mx-auto">
+      Structured programs designed for Canadian immigration success & real-world fluency
+    </p>
 
-          <PricingCard
-            title="Individual Classes"
-            price="$320"
-            duration="8–10 Months"
-            highlight
-            features={[
-              "12 Classes / Month",
-              "Flexible Timings",
-              "1:1 Coaching",
-              "A1 to B2 Levels",
-            ]}
-          />
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <PricingCard
+        title="Group Classes"
+        price="$270"
+        duration="10–12 Months"
+        features={[
+          "20 Classes / Month",
+          "Mon–Fri (8–9 PM EST)",
+          "4–5 Learners / Batch",
+          "A1 to B2 Coverage",
+        ]}
+      />
 
-          <PricingCard
-            title="Individual (Intensive)"
-            price="$430"
-            duration="6–8 Months"
-            features={[
-              "20 Classes / Month",
-              "Fast-Track Learning",
-              "1:1 Intensive Coaching",
-              "A1 to B2 Levels",
-            ]}
-          />
-           <PricingCard
-            title="Weekly speaking classes"
-            price="$150"
-            duration="6–8 Months"
-            features={[
-              "8 Classes / Month",
-              "Fast-Track Learning",
-              "1:1 Intensive Coaching",
-              "A1 to B2 levels ",
-            ]}
-          />
-        </div>
-      </section>
+      <PricingCard
+        title="Individual"
+        price="$320"
+        duration="8–10 Months"
+        highlight
+        features={[
+          "12 Classes / Month",
+          "Flexible Timings",
+          "Dedicated 1:1 Mentor",
+          "A1 to B2 Coverage",
+        ]}
+      />
+
+      <PricingCard
+        title="Intensive 1:1"
+        price="$430"
+        duration="6–8 Months"
+        features={[
+          "20 Classes / Month",
+          "Fast-Track Progress",
+          "Daily Practice",
+          "A1 to B2 Coverage",
+        ]}
+      />
+
+      <PricingCard
+        title="Speaking Booster"
+        price="$150"
+        duration="6–8 Months"
+        features={[
+          "8 Speaking Classes",
+          "Pronunciation Focus",
+          "Small Groups / 1:1",
+          "Confidence Building",
+        ]}
+      />
+    </div>
+  </div>
+</section>
+
+
+
+
+
 
       <TfaApproach />
 
@@ -264,49 +276,93 @@ const CourseInfo = () => {
 
 
 const PricingCard = ({ title, price, duration, features, highlight }) => {
-  const navigate = useNavigate();
 
-  const handleEnroll = () => {
-    const amount = Number(price.replace("$", "")) * 85; // USD → INR approx
-    loadRazorpay(amount, title, navigate);
+  const handleEnroll = async () => {
+    try {
+      const response = await fetch(
+        "https://york-centre-api.onrender.com/payment/enroll",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ plan: title }),
+        }
+      );
+
+      const data = await response.json();
+      if (!response.ok || !data.redirectUrl) {
+        throw new Error(data.message || "Unable to redirect");
+      }
+
+      window.location.href = data.redirectUrl;
+    } catch (error) {
+      alert(error.message || "Something went wrong");
+    }
   };
 
   return (
-    <div>
-      {/* existing content */}
-       <div
-    className={`relative border rounded-2xl p-8 text-center bg-white
-    transition hover:shadow-xl hover:-translate-y-1
-    ${highlight ? "border-red-500 scale-105" : ""}`}
-  >
-    {highlight && (
-      <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-500 text-white text-xs px-4 py-1 rounded-full">
-        Most Popular
-      </span>
-    )}
+    <div
+      className={`relative rounded-[28px] p-8 bg-white shadow-lg
+      transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl
+      ${highlight
+        ? "ring-2 ring-indigo-600 scale-105"
+        : "ring-1 ring-slate-200"
+      }`}
+    >
+      {/* Badge */}
+      {highlight && (
+        <span
+          className="absolute -top-4 left-1/2 -translate-x-1/2
+          bg-indigo-600 text-white text-xs font-semibold
+          px-6 py-1.5 rounded-full shadow-md"
+        >
+          Best Value
+        </span>
+      )}
 
-    <h3 className="text-xl font-semibold">{title}</h3>
-    <p className="text-red-500 mt-1">{duration}</p>
+      {/* Title */}
+      <div className="text-center">
+        <h3 className="text-xl font-semibold text-slate-900">{title}</h3>
+        <p className="text-sm text-slate-500 mt-1">{duration}</p>
+      </div>
 
-    <p className="text-5xl font-bold mt-6">{price}</p>
-    <p className="text-gray-500">Per Month</p>
+      {/* Price */}
+      <div className="text-center my-8">
+        <p className="text-5xl font-extrabold text-indigo-700">
+          {price}
+        </p>
+        <p className="text-sm text-slate-500 mt-1">per month</p>
+      </div>
 
-    <ul className="mt-6 space-y-3 text-left">
-      {features.map((f, i) => (
-        <li key={i}>✔ {f}</li>
-      ))}
-    </ul>
+      {/* Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent mb-6" />
 
+      {/* Features */}
+      <ul className="space-y-3 text-sm text-slate-700">
+        {features.map((f, i) => (
+          <li key={i} className="flex gap-3 items-start">
+            <span className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
+            {f}
+          </li>
+        ))}
+      </ul>
+
+      {/* CTA */}
       <button
         onClick={handleEnroll}
-        className="mt-8 w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-3 rounded-lg"
+        className={`mt-10 w-full py-3 cursor-pointer rounded-xl font-semibold transition
+        ${highlight
+          ? "bg-indigo-600 text-white hover:bg-indigo-700"
+          : "bg-slate-900 text-white hover:bg-black"
+        }`}
       >
         Enroll Now
       </button>
     </div>
-    </div>
   );
 };
+
+
+
 
 
 
