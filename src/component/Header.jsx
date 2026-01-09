@@ -26,7 +26,7 @@ export default function Header() {
       {/* ================= LOGO + TEXT ================= */}
 <Link to="/" className="flex items-center gap-4 text-left">
   <img
-    src="/logo2.svg"
+    src="/logo9.svg"
     alt="York-Center French Institute"
     className="h-16 md:h-16 w-auto object-contain"
   />
