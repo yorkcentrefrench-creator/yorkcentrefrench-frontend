@@ -63,6 +63,8 @@ export default function Header() {
                   { path: "/professional", label: "PROFESSIONAL (B2)" },
                   { path: "/group-classes", label: "GROUP CLASSES" },
                   { path: "/private-tutoring", label: "PRIVATE TUTORING" },
+                  { path: "/speaking", label: "SPEAKING" },
+
                   // { path: "/professional-tef", label: "PROFESSIONAL (B2 + TEF)" },
                   { path: "/professional-tef", label: "TEF & DELF EXAM PREPARATION" },
                 ].map((item, index) => (

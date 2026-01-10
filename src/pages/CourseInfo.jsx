@@ -199,6 +199,7 @@ const CourseInfo = () => {
       <PricingCard
         title="Group Classes"
         price="$270"
+        name= "group"
         duration="10–12 Months"
         features={[
           "20 Classes / Month",
@@ -210,6 +211,7 @@ const CourseInfo = () => {
 
       <PricingCard
         title="Individual"
+        name ="individual"
         price="$320"
         duration="8–10 Months"
         highlight
@@ -224,6 +226,7 @@ const CourseInfo = () => {
       <PricingCard
         title="Intensive 1:1"
         price="$430"
+        name="intensive"
         duration="6–8 Months"
         features={[
           "20 Classes / Month",
@@ -236,6 +239,7 @@ const CourseInfo = () => {
       <PricingCard
         title="Speaking Booster"
         price="$150"
+        name="speaking"
         duration="6–8 Months"
         features={[
           "8 Speaking Classes",
@@ -275,29 +279,31 @@ const CourseInfo = () => {
 /* ================= PRICING CARD ================= */
 
 
-const PricingCard = ({ title, price, duration, features, highlight }) => {
-
-  const handleEnroll = async () => {
-    try {
-      const response = await fetch(
-        "https://york-centre-api.onrender.com/payment/enroll",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ plan: title }),
-        }
-      );
-
-      const data = await response.json();
-      if (!response.ok || !data.redirectUrl) {
-        throw new Error(data.message || "Unable to redirect");
+const PricingCard = ({ title, price, duration, features, highlight,name }) => {
+const handleEnroll = async () => {
+  try {
+    const response = await fetch(
+      "https://york-centre-api.onrender.com/payment/enroll",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ plan: name }),
       }
+    );
 
-      window.location.href = data.redirectUrl;
-    } catch (error) {
-      alert(error.message || "Something went wrong");
+    const data = await response.json();
+
+    if (!response.ok || !data.payment_url) {
+      throw new Error(data.message || "Unable to redirect");
     }
-  };
+
+    // 🔐 Open in new tab with security
+    window.open(data.payment_url, "_blank", "noopener,noreferrer");
+  } catch (error) {
+    alert(error.message || "Something went wrong");
+  }
+};
+
 
   return (
     <div

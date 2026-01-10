@@ -17,6 +17,7 @@ import Contact from "./pages/Contact";
 import FAQSection from "./component/FAQSection";
 import AboutUs from "./pages/About";
 import PaymentSuccess from "./pages/PaymentSuccess";
+import Speaking from "./pages/Speaking";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Route path="/exam-preparation" element={<ExamPrep />} />
         {/* <Route path="/blog" element={<Blog />} /> */}
         <Route path="/contact" element={<Contact/>} />
+        <Route path="/speaking" element={<Speaking/>} />
         <Route path="/faq" element={<FAQSection/>} />
         <Route path="/about" element={<AboutUs/>} />
          <Route path="/payment-success" element={<PaymentSuccess />} />
