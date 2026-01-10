@@ -1,11 +1,13 @@
 import { useState, useRef, useEffect } from "react";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import DemoModal from "./DemoModal";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [showLevels, setShowLevels] = useState(false);
   const dropdownRef = useRef(null);
+  const [openDemo, setOpenDemo] = useState(false);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -19,20 +21,19 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b shadow-sm">
+    <><header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b shadow-sm">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
-        
-        {/* ================= LOGO ================= */}
-      {/* ================= LOGO + TEXT ================= */}
-<Link to="/" className="flex items-center gap-4 text-left">
-  <img
-    src="/logo9.svg"
-    alt="York-Center French Institute"
-    className="h-16 md:h-16 w-auto object-contain"
-  />
 
-  
-</Link>
+        {/* ================= LOGO ================= */}
+        {/* ================= LOGO + TEXT ================= */}
+        <Link to="/" className="flex items-center gap-4 text-left">
+          <img
+            src="/logo9.svg"
+            alt="York-Center French Institute"
+            className="h-16 md:h-16 w-auto object-contain" />
+
+
+        </Link>
 
 
 
@@ -93,12 +94,15 @@ export default function Header() {
         </nav>
 
         {/* ================= CTA ================= */}
-        <Link
-          to="/course-info"
+        <button
+
+          onClick={() => setOpenDemo(true)}
+
           className="hidden lg:inline-flex items-center justify-center bg-red-500 text-white px-6 py-2 rounded-lg text-sm font-semibold shadow hover:bg-red-600 transition"
         >
-          COURSE INFORMATION
-        </Link>
+          BOOK A FREE DEMO
+        </button>
+
 
         {/* ================= MOBILE TOGGLE ================= */}
         <button
@@ -123,6 +127,8 @@ export default function Header() {
                 <Link to="/intermediate">INTERMEDIATE (B1)</Link>
                 <Link to="/professional">PROFESSIONAL (B2)</Link>
                 <Link to="/group-classes">GROUP CLASSES</Link>
+                <Link to="/speaking">SPEAKING</Link>
+
                 <Link to="/private-tutoring">PRIVATE TUTORING</Link>
                 <Link to="/professional-tef">PROFESSIONAL (B2 + TEF)</Link>
                 <Link to="/exam-preparation">TEF & DELF EXAM PREPARATION</Link>
@@ -142,6 +148,7 @@ export default function Header() {
           </nav>
         </div>
       )}
-    </header>
+    </header><DemoModal open={openDemo} onClose={() => setOpenDemo(false)} /></>
+
   );
 }

@@ -142,7 +142,7 @@ const Contact = () => {
                     : "bg-red-100 text-red-700"
                 }`}
               >
-                {popup.text}
+                {popup.message}
               </div>
             )}
 
