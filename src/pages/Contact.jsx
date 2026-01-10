@@ -16,7 +16,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
+    mobile_number: "",
     message: "",
   });
 
@@ -39,7 +39,7 @@ const Contact = () => {
       setLoading(true);
 
       const response = await fetch(
-        "https://york-centre-api.onrender.com/contact",
+        "https://york-centre-api.onrender.com/book-demo",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -58,7 +58,7 @@ const Contact = () => {
       setFormData({
         name: "",
         email: "",
-        subject: "",
+        mobile_number: "",
         message: "",
       });
 
@@ -153,7 +153,7 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Your Name"
+                  placeholder="enter Your Name"
                   className="border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500"
                 />
                 <input
@@ -161,17 +161,17 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="Your Email"
+                  placeholder=" enter Your Email"
                   className="border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500"
                 />
               </div>
 
               <input
-                type="text"
-                name="subject"
-                value={formData.subject}
+                type="number"
+                name="mobile_number"
+                value={formData.mobile_number}
                 onChange={handleChange}
-                placeholder="Subject"
+                placeholder="enter your mobile Number"
                 className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500"
               />
 
@@ -180,7 +180,7 @@ const Contact = () => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Your Message"
+                placeholder="enter Your Message"
                 className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500"
               ></textarea>
 
