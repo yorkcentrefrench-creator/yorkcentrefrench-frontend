@@ -11,7 +11,7 @@ const GroupClasses = () => {
     {
       question: "What is the maximum class size for group classes?",
       answer:
-        "Each group class is limited to a maximum of 12 students to ensure personalized attention and better participation.",
+        "Each group class is limited to a maximum of 5 students to ensure personalized attention and better participation.",
     },
     {
       question: "What is the cost of the classes?",
@@ -21,7 +21,7 @@ const GroupClasses = () => {
     {
       question: "What is the duration of the classes?",
       answer:
-        "Each class runs for 2 hours. We offer weekday, evening, and weekend batches.",
+        "Each class runs for 1 hour. We offer weekday, evening, and weekend batches.",
     },
   ];
 

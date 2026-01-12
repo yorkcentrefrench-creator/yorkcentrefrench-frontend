@@ -35,7 +35,7 @@ const WhatsappCommunity = () => {
 
         {/* RIGHT IMAGE COLLAGE */}
         <div className="flex justify-center flex-wrap gap-6">
-          <img src="https://frenchforpr.com/wp-content/uploads/2024/10/Untitled-design-35-768x768.png" className="w-68 h-68 object-contain" />
+          <img src="/watshap-community.png" className="w-68 h-68 object-contain" />
          
         </div>
 
