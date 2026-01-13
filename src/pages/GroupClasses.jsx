@@ -59,7 +59,7 @@ const GroupClasses = () => {
         </p>
 
         <img
-          src="https://frenchforpr.com/wp-content/uploads/2025/01/Intermediate-French-Classes-in-Canadan-.png"
+          src="/group-classes.png"
           alt="French Group Learning"
           className="rounded-2xl shadow-xl mb-20 mx-auto"
         />
