@@ -138,8 +138,8 @@ const GroupClasses = () => {
         <div className="bg-gradient-to-r from-red-500 to-red-600 text-white rounded-2xl p-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center mb-24 shadow-xl">
           {[
             ["📅", "Schedule", "Weekly Classes"],
-            ["👥", "Class Size", "Max 12 Students"],
-            ["⏳", "Duration", "2 Hours / Session"],
+            ["👥", "Class Size", "Max 5 Students"],
+            ["⏳", "Duration", "1 Hour / Session"],
             ["👨‍🏫", "Instructor", "Certified Trainers"],
           ].map(([icon, title, text], i) => (
             <div key={i}>
