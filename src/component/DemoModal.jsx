@@ -6,6 +6,7 @@ export default function DemoModal({ open, onClose }) {
     name: "",
     email: "",
     message: "",
+    mobile_number:"",
   });
   const [loading, setLoading] = useState(false);
   const [popup, setPopup] = useState(null); // success | error
@@ -28,7 +29,7 @@ export default function DemoModal({ open, onClose }) {
       setLoading(true);
 
       const response = await fetch(
-        "https://york-centre-api.onrender.com/demo/request",
+        "https://york-centre-api.onrender.com/book-demo",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -47,7 +48,7 @@ export default function DemoModal({ open, onClose }) {
       // Auto close after 2.5 seconds
       setTimeout(() => {
         setPopup(null);
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", message: "",mobile_number:"" });
         onClose();
       }, 2500);
 
@@ -108,6 +109,18 @@ export default function DemoModal({ open, onClose }) {
             className="w-full px-4 py-3 bg-white/5 rounded text-sm text-white
             focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
+          <input
+  type="tel"
+  inputMode="numeric"
+  pattern="[0-9]*"
+  name="mobile_number"
+  value={formData.mobile_number}
+  onChange={handleChange}
+  placeholder="Your Mobile Number"
+  className="w-full px-4 py-3 bg-white/5 rounded text-sm text-white
+  focus:outline-none focus:ring-2 focus:ring-indigo-500"
+/>
+
 
           <textarea
             rows="4"
