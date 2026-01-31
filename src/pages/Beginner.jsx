@@ -272,7 +272,7 @@ const Beginner = () => {
             { title: "A1 & A2", link: "/beginner" },
             { title: "B1 & B2", link: "/intermediate" },
             { title: "TEF & DELF Exam Prep", link: "/exam" },
-            { title: "Professional (C2)", link: "/professional" },
+            { title: "Speaking Classes", link: "/speaking" },
             { title: "Group Classes", link: "/group" },
             { title: "Private Tutoring", link: "/private" },
           ].map((course, index) => (

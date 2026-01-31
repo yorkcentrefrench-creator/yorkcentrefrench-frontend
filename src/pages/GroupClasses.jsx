@@ -11,7 +11,7 @@ const GroupClasses = () => {
     {
       question: "What is the maximum class size for group classes?",
       answer:
-        "Each group class is limited to a maximum of 12 students to ensure personalized attention and better participation.",
+        "Each group class is limited to a maximum of 5 students to ensure personalized attention and better participation.",
     },
     {
       question: "What is the cost of the classes?",
@@ -21,7 +21,7 @@ const GroupClasses = () => {
     {
       question: "What is the duration of the classes?",
       answer:
-        "Each class runs for 2 hours. We offer weekday, evening, and weekend batches.",
+        "Each class runs for 1 hour. We offer weekday, evening, and weekend batches.",
     },
   ];
 
@@ -59,7 +59,7 @@ const GroupClasses = () => {
         </p>
 
         <img
-          src="https://frenchforpr.com/wp-content/uploads/2025/01/Intermediate-French-Classes-in-Canadan-.png"
+          src="/group-classes.png"
           alt="French Group Learning"
           className="rounded-2xl shadow-xl mb-20 mx-auto"
         />
@@ -138,8 +138,8 @@ const GroupClasses = () => {
         <div className="bg-gradient-to-r from-red-500 to-red-600 text-white rounded-2xl p-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center mb-24 shadow-xl">
           {[
             ["📅", "Schedule", "Weekly Classes"],
-            ["👥", "Class Size", "Max 12 Students"],
-            ["⏳", "Duration", "2 Hours / Session"],
+            ["👥", "Class Size", "Max 5 Students"],
+            ["⏳", "Duration", "1 Hour / Session"],
             ["👨‍🏫", "Instructor", "Certified Trainers"],
           ].map(([icon, title, text], i) => (
             <div key={i}>
