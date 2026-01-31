@@ -1,5 +1,6 @@
 import { FaTimes } from "react-icons/fa";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 export default function DemoModal({ open, onClose }) {
   const [formData, setFormData] = useState({
@@ -42,8 +43,11 @@ export default function DemoModal({ open, onClose }) {
       if (!response.ok) {
         throw new Error(data.message || "Something went wrong");
       }
+       toast.success(
+      "Thank you for submitting! Our team will contact you shortly "
+    );
 
-      setPopup({ type: "success", text: "Demo request submitted successfully!" });
+      // setPopup({ type: "success", text: "Demo request submitted successfully!" });
 
       // Auto close after 2.5 seconds
       setTimeout(() => {

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import toast from "react-hot-toast";
+
 import {
   FaMapMarkerAlt,
   FaEnvelope,
@@ -27,49 +29,50 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (!formData.name || !formData.email || !formData.message) {
-      setPopup({ type: "error", text: "Please fill all required fields" });
-      return;
-    }
+  if (!formData.name || !formData.email || !formData.message) {
+    toast.error("Please fill all required fields");
+    return;
+  }
 
-    try {
-      setLoading(true);
+  try {
+    setLoading(true);
 
-      const response = await fetch(
-        "https://york-centre-api.onrender.com/book-demo",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        }
-      );
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || "Failed to send message");
+    const response = await fetch(
+      "https://york-centre-api.onrender.com/book-demo",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       }
+    );
 
-      setPopup({ type: "success", text: "Message sent successfully!" });
+    const data = await response.json();
 
-      setFormData({
-        name: "",
-        email: "",
-        mobile_number: "",
-        message: "",
-      });
-
-      setTimeout(() => setPopup(null), 3000);
-
-    } catch (error) {
-      setPopup({ type: "error", text: error.message });
-    } finally {
-      setLoading(false);
+    if (!response.ok) {
+      throw new Error(data.message || "Failed to send message");
     }
-  };
+
+    // 🎉 SUCCESS TOAST
+    toast.success(
+      "Thank you for submitting! Our team will contact you shortly "
+    );
+
+    setFormData({
+      name: "",
+      email: "",
+      mobile_number: "",
+      message: "",
+    });
+  } catch (error) {
+    toast.error(error.message || "Something went wrong");
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   return (
     <div className="bg-gray-50 min-h-screen">

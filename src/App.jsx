@@ -12,22 +12,34 @@ import GroupClasses from "./pages/GroupClasses";
 import PrivateTutoring from "./pages/PrivateTutoring";
 import ProfessionalTEF from "./pages/ProfessionalTEF";
 import ExamPrep from "./pages/ExamPrep";
-import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import FAQSection from "./component/FAQSection";
 import AboutUs from "./pages/About";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import Speaking from "./pages/Speaking";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <BrowserRouter>
+      {/* 🔔 TOASTER (only once in the app) */}
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          duration: 4000,
+          style: {
+            borderRadius: "12px",
+            background: "#111827",
+            color: "#fff",
+          },
+        }}
+      />
+
       <Header />
 
       <Routes>
-        <Route path="/course-info" element={<CourseInfo />} />
         <Route path="/" element={<CourseInfo />} />
-
+        <Route path="/course-info" element={<CourseInfo />} />
         <Route path="/whatsapp-community" element={<WhatsappCommunity />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
@@ -38,16 +50,11 @@ function App() {
         <Route path="/private-tutoring" element={<PrivateTutoring />} />
         <Route path="/professional-tef" element={<ProfessionalTEF />} />
         <Route path="/exam-preparation" element={<ExamPrep />} />
-        {/* <Route path="/blog" element={<Blog />} /> */}
-        <Route path="/contact" element={<Contact/>} />
-        <Route path="/speaking" element={<Speaking/>} />
-        <Route path="/faq" element={<FAQSection/>} />
-        <Route path="/about" element={<AboutUs/>} />
-         <Route path="/payment-success" element={<PaymentSuccess />} />
-
-
-
-
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/speaking" element={<Speaking />} />
+        <Route path="/faq" element={<FAQSection />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/payment-success" element={<PaymentSuccess />} />
       </Routes>
 
       <Footer />
