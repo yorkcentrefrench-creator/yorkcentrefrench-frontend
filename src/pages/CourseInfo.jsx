@@ -287,48 +287,46 @@ const CourseInfo = () => {
 /* ================= PRICING CARD ================= */
 
 
-const PricingCard = ({ title, price, duration, features, highlight,name }) => {
-const handleEnroll = async () => {
-  try {
-    const response = await fetch(
-      "https://york-centre-api.onrender.com/payment/enroll",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ plan: name }),
+const PricingCard = ({ title, price, duration, features, highlight, name }) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleEnroll = async () => {
+    try {
+      setLoading(true);
+
+      const response = await fetch(
+        "https://york-centre-api.onrender.com/payment/enroll",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ plan: name }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok || !data.payment_url) {
+        throw new Error(data.message || "Unable to redirect");
       }
-    );
 
-    const data = await response.json();
-
-    if (!response.ok || !data.payment_url) {
-      throw new Error(data.message || "Unable to redirect");
+      window.open(data.payment_url, "_blank", "noopener,noreferrer");
+    } catch (error) {
+      alert(error.message || "Something went wrong");
+    } finally {
+      setLoading(false);
     }
-
-    // 🔐 Open in new tab with security
-    window.open(data.payment_url, "_blank", "noopener,noreferrer");
-  } catch (error) {
-    alert(error.message || "Something went wrong");
-  }
-};
-
+  };
 
   return (
     <div
       className={`relative rounded-[28px] p-8 bg-white shadow-lg
       transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl
-      ${highlight
-        ? "ring-2 ring-indigo-600 scale-105"
-        : "ring-1 ring-slate-200"
-      }`}
+      ${highlight ? "ring-2 ring-indigo-600 scale-105" : "ring-1 ring-slate-200"}`}
     >
       {/* Badge */}
       {highlight && (
-        <span
-          className="absolute -top-4 left-1/2 -translate-x-1/2
-          bg-indigo-600 text-white text-xs font-semibold
-          px-6 py-1.5 rounded-full shadow-md"
-        >
+        <span className="absolute -top-4 left-1/2 -translate-x-1/2
+        bg-indigo-600 text-white text-xs font-semibold px-6 py-1.5 rounded-full shadow-md">
           Best Value
         </span>
       )}
@@ -341,9 +339,7 @@ const handleEnroll = async () => {
 
       {/* Price */}
       <div className="text-center my-8">
-        <p className="text-5xl font-extrabold text-indigo-700">
-          {price}
-        </p>
+        <p className="text-5xl font-extrabold text-indigo-700">{price}</p>
         <p className="text-sm text-slate-500 mt-1">per month</p>
       </div>
 
@@ -363,17 +359,28 @@ const handleEnroll = async () => {
       {/* CTA */}
       <button
         onClick={handleEnroll}
-        className={`mt-10 w-full py-3 cursor-pointer rounded-xl font-semibold transition
-        ${highlight
+        disabled={loading}
+        className={`mt-10 w-full py-3 rounded-xl font-semibold transition flex items-center justify-center gap-2
+        ${loading
+          ? "bg-slate-400 cursor-not-allowed"
+          : highlight
           ? "bg-indigo-600 text-white hover:bg-indigo-700"
           : "bg-slate-900 text-white hover:bg-black"
         }`}
       >
-        Enroll Now
+        {loading ? (
+          <>
+            <span className="h-5 w-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+            Redirecting…
+          </>
+        ) : (
+          "Enroll Now"
+        )}
       </button>
     </div>
   );
 };
+
 
 
 
