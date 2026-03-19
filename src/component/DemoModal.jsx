@@ -32,7 +32,11 @@ export default function DemoModal({ open, onClose }) {
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
+          body: JSON.stringify({
+            fullName: formData.name,
+            email: formData.email,
+            description: formData.message
+          })
         }
       );
 

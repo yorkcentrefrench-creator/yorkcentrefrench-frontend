@@ -14,6 +14,7 @@ import FAQSection from "../component/FAQSection";
 import { useNavigate } from "react-router-dom";
 import { loadRazorpay } from "../utils/razorpay";
 import DemoModal from "../component/DemoModal";
+import HeroSlider from "../component/HeroSlider";
 const reviews = [
   {
     initial: "M",
@@ -49,6 +50,11 @@ const CourseInfo = () => {
   const [openDemo, setOpenDemo] = useState(false);
   return (
     <div className="w-full bg-white text-gray-800">
+      {/* ================= SLIDE BANNER ================= */}
+      <section className="w-full">
+        <HeroSlider />
+      </section>
+
       {/* ================= HERO ================= */}
       <section className="bg-gradient-to-br from-red-50 to-white ">
         <div className="max-w-7xl mx-auto px-4 md:px-8 grid md:grid-cols-2 gap-12 items-center">
@@ -82,7 +88,7 @@ const CourseInfo = () => {
           {/* Image */}
           <div className="relative py-5">
             <img
-            src="./student.jpg"
+              src="./student.jpg"
               alt="Students learning French"
               className="rounded-2xl shadow-lg w-full h-[720px] object-cover"
             />
@@ -95,6 +101,8 @@ const CourseInfo = () => {
         </div>
       </section>
       <DemoModal open={openDemo} onClose={() => setOpenDemo(false)} />
+
+
 
       {/* ================= WHAT WE OFFER ================= */}
       <section className="py-20">
