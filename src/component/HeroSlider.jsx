@@ -6,6 +6,15 @@ const slides = [
     src: "/slide banner.png",
     alt: "York Centre French – Slide Banner",
   },
+  {
+    src: "/Slide Banner 1.png",
+    alt: "York Centre French – Slide Banner",
+
+  },
+  {
+    src: "/Slide Banner 2.png",
+    alt: "York Centre French – Slide Banner",
+  },
 ];
 
 const INTERVAL = 4000; // ms
@@ -122,11 +131,10 @@ const HeroSlider = () => {
                   setIndex(i + 1);
                 }}
                 aria-label={`Go to slide ${i + 1}`}
-                className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
-                  i === realIndex
-                    ? "bg-white scale-110 shadow"
-                    : "bg-white/50 hover:bg-white/80"
-                }`}
+                className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${i === realIndex
+                  ? "bg-white scale-110 shadow"
+                  : "bg-white/50 hover:bg-white/80"
+                  }`}
               />
             ))}
           </div>
