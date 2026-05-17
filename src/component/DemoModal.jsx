@@ -30,7 +30,7 @@ export default function DemoModal({ open, onClose }) {
       setLoading(true);
 
       const response = await fetch(
-        "http://10.223.103.28/book-demo",
+        "https://york-centre-api.onrender.com/book-demo",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
