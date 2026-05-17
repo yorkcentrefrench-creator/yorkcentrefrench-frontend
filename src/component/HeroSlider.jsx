@@ -3,16 +3,16 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const slides = [
   {
-    src: "/slide banner.png",
+    src: "/slide banner.webp",
     alt: "York Centre French – Slide Banner",
   },
   {
-    src: "/Slide Banner 1.png",
+    src: "/Slide Banner 1.webp",
     alt: "York Centre French – Slide Banner",
 
   },
   {
-    src: "/Slide Banner 2.png",
+    src: "/Slide Banner 2.webp",
     alt: "York Centre French – Slide Banner",
   },
 ];

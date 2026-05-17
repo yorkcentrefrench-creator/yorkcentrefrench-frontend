@@ -56,102 +56,373 @@ const CourseInfo = () => {
       </section>
 
       {/* ================= HERO ================= */}
-      <section className="bg-gradient-to-br from-red-50 to-white ">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-              Canada’s Leading{" "}
-              <span className="text-red-600">Fast-Growth</span>
-              <br />
-              French Language Institute 🇨🇦
-            </h1>
+      <section className="bg-gradient-to-br from-red-50 to-white py-8">
+  <div className="max-w-7xl mx-auto px-4 md:px-8 grid md:grid-cols-2 gap-10 items-center">
 
-            <p className="mt-6 text-lg text-gray-600">
-              Canadian-owned since <strong>2018</strong>, trusted by{" "}
-              <strong>1,000+ learners</strong> with{" "}
-              <strong>200+ certified tutors</strong>.
-            </p>
+    {/* LEFT CONTENT */}
+    <div>
 
-            <p className="mt-4 text-gray-600">
-              Achieve <strong>CLB 7+</strong> through structured TEF / TCF
-              preparation and secure Canadian PR confidently.
-            </p>
+      {/* Heading */}
+      <h1 className="text-4xl md:text-5xl font-bold leading-tight text-gray-900">
+        Learn French from{" "}
+        <span className="text-red-600">zero to B2</span>
+        <br />
+        within few months.
+      </h1>
 
-           <button
-              onClick={() => setOpenDemo(true)}
-              className="mt-8 bg-red-500 hover:bg-red-600 text-white font-semibold px-8 py-3 rounded-lg shadow hover:shadow-lg transition"
-            >
-              Book Free Demo
-            </button>
-          </div>
+      {/* Paragraph */}
+      <p className="mt-6 text-lg text-gray-600 leading-relaxed">
+        Explore online French classes — including{" "}
+        <strong>DELF, TEF, TCF Canada exam preparation.</strong>
+      </p>
 
-          {/* Image */}
-          <div className="relative py-5">
-            <img
-              src="./student.jpg"
-              alt="Students learning French"
-              className="rounded-2xl shadow-lg w-full h-[720px] object-cover"
-            />
-            <div className="absolute -bottom-6 left-6 bg-white p-5 rounded-xl  border border-red-100">
-              <p className="text-sm text-gray-500">Success Rate</p>
-              <p className="text-2xl font-bold text-red-600">92%</p>
-              <p className="text-xs text-gray-500">CLB 7+ Achievers</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Highlight Line */}
+      <p className="mt-5 text-lg font-semibold text-gray-900">
+        Boost Your Future with French in Canada:
+        <span className="text-red-500">
+          {" "}TEF/TCF Prep, Travel & Career
+        </span>
+      </p>
+
+      {/* Description */}
+      <p className="mt-5 text-gray-600 leading-relaxed">
+        Join our online French classes tailored to your needs, led by
+        C1/C2 Certified French-speaking instructors. From beginner
+        foundations to TEF/TCF exam preparation, we support students globally.
+      </p>
+
+      {/* Button */}
+      <button
+        onClick={() => setOpenDemo(true)}
+        className="
+          mt-8
+          bg-red-500 hover:bg-red-600
+          text-white font-semibold
+          px-7 py-3.5 rounded-xl
+          shadow-md hover:shadow-lg
+          transition-all duration-300
+        "
+      >
+        Book Free Demo
+      </button>
+
+    </div>
+
+    {/* RIGHT IMAGE */}
+    <div className="relative">
+
+      <img
+        src="./student.webp"
+        alt="Students learning French"
+        className="
+          rounded-3xl
+          shadow-xl
+          w-full
+          h-[720px]
+          object-cover
+        "
+      />
+
+      {/* Floating Card */}
+      <div className="
+        absolute bottom-5 left-5
+        bg-white/95
+        px-5 py-4
+        rounded-2xl
+        shadow-lg
+        border border-gray-100
+      ">
+
+        <p className="text-sm text-gray-500">
+          Success Rate
+        </p>
+
+        <p className="text-2xl font-bold text-red-600">
+          92%
+        </p>
+
+        <p className="text-xs text-gray-500">
+          CLB 7+ Achievers
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
       <DemoModal open={openDemo} onClose={() => setOpenDemo(false)} />
+
+
+            {/* ================= AFFILIATIONS ================= */}
+      <section className="py-10 bg-gradient-to-b from-white to-gray-50 overflow-hidden w-full">
+  <div className="flex animate-scroll whitespace-nowrap gap-0">
+
+  {[1,2].map((_, index) => (
+    <React.Fragment key={index}>
+
+      {/* Logo 1 */}
+      <div className="bg-white rounded-3xl border border-gray-100 shadow-md p-6 flex justify-center items-center h-[180px] min-w-[260px] mx-3">
+        <img
+          src="./af alliances.png"
+          alt="Alliance Françaises Canada"
+          className="max-h-24 object-contain"
+        />
+      </div>
+
+      {/* Logo 2 */}
+      <div className="bg-white rounded-3xl border border-gray-100 shadow-md p-6 flex justify-center items-center h-[180px] min-w-[260px] mx-3">
+        <img
+          src="./tcf canada.png"
+          alt="TCF Canada"
+          className="max-h-28 object-contain"
+        />
+      </div>
+
+      {/* Logo 3 */}
+      <div className="bg-white rounded-3xl border border-gray-100 shadow-md p-6 flex justify-center items-center h-[180px] min-w-[260px] mx-3">
+        <img
+          src="./tef canada.png"
+          alt="TEF Canada"
+          className="max-h-24 object-contain"
+        />
+      </div>
+
+      {/* Logo 4 */}
+      <div className="bg-white rounded-3xl border border-gray-100 shadow-md p-6 flex justify-center items-center h-[180px] min-w-[260px] mx-3">
+        <img
+          src="./delf dalf.png"
+          alt="DELF DALF"
+          className="max-h-28 object-contain"
+        />
+      </div>
+
+    </React.Fragment>
+  ))}
+
+</div>
+</section>
+
+
+
+<section className="py-24 bg-white relative overflow-hidden">
+
+  {/* Background Glow */}
+  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-red-50 rounded-full blur-3xl opacity-60"></div>
+
+  <div className="max-w-7xl mx-auto px-4 relative z-10">
+
+    {/* Heading */}
+    <div className="text-center max-w-5xl mx-auto">
+
+      <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 whitespace-nowrap">
+        Why French is a
+        <span className="text-red-500"> Game-changer </span>
+        in Canada?
+      </h2>
+
+    </div>
+
+    {/* Benefits */}
+    <div className="flex flex-wrap justify-center gap-4 mt-14">
+
+      {[
+        "Boost your CRS score for PR",
+        "Qualify for French-specific immigration streams",
+        "Access high-paying bilingual jobs",
+        "Stand out in competitive job markets",
+        "Build a future in provinces like Quebec & beyond",
+      ].map((item, i) => (
+
+        <div
+          key={i}
+          className="
+            group
+            bg-white/80 backdrop-blur-xl
+            border border-gray-100
+            rounded-2xl
+            px-5 py-3
+            shadow-sm
+            hover:shadow-xl
+            hover:-translate-y-1
+            transition-all duration-300
+            flex items-center gap-3
+          "
+        >
+
+          {/* Check Icon */}
+          <div className="
+            w-8 h-8 rounded-xl
+            bg-gradient-to-br from-green-100 to-green-50
+            text-green-600
+            flex items-center justify-center
+            font-bold
+            text-sm
+            shadow-sm
+          ">
+            ✓
+          </div>
+
+          {/* Text */}
+          <p className="font-medium text-gray-700 text-sm md:text-base">
+            {item}
+          </p>
+
+        </div>
+
+      ))}
+
+    </div>
+
+    {/* Stats */}
+    <div className="mt-20 flex flex-wrap justify-center items-center gap-8 md:gap-14">
+
+      {/* Stat 1 */}
+      <div className="text-center">
+        <h3 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-red-500 to-red-400 bg-clip-text text-transparent">
+          2000+
+        </h3>
+
+        <p className="mt-2 text-gray-500 font-medium text-xs md:text-sm uppercase tracking-[2px]">
+          Students Trained
+        </p>
+      </div>
+
+      {/* Divider */}
+      <div className="hidden md:block w-px h-14 bg-gray-200"></div>
+
+      {/* Stat 2 */}
+      <div className="text-center">
+        <h3 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-indigo-500 to-indigo-400 bg-clip-text text-transparent">
+          20+
+        </h3>
+
+        <p className="mt-2 text-gray-500 font-medium text-xs md:text-sm uppercase tracking-[2px]">
+          Certified Tutors
+        </p>
+      </div>
+
+      {/* Divider */}
+      <div className="hidden md:block w-px h-14 bg-gray-200"></div>
+
+      {/* Stat 3 */}
+      <div className="text-center">
+        <h3 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-yellow-500 to-orange-400 bg-clip-text text-transparent">
+          4.8★
+        </h3>
+
+        <p className="mt-2 text-gray-500 font-medium text-xs md:text-sm uppercase tracking-[2px]">
+          Average Rating
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
 
 
 
       {/* ================= WHAT WE OFFER ================= */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            What We Offer
-          </h2>
+      <section className="py-20 bg-white relative overflow-hidden">
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <FaLaptopCode />,
-                text: "Specialized TEF & TCF Exam Prep (A1–B2)",
-              },
-              {
-                icon: <FaBolt />,
-                text: "Fast-Track Programs (6–10 Months)",
-              },
-              {
-                icon: <FaUserFriends />,
-                text: "Live One-on-One & Small Groups",
-              },
-              {
-                icon: <FaChalkboardTeacher />,
-                text: "Personalized Coaching & Mentorship",
-              },
-              {
-                icon: <FaClock />,
-                text: "Flexible Morning & Evening Schedules",
-              },
-              {
-                icon: <FaCertificate />,
-                text: "C1 & C2 Certified Instructors",
-              },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="group border rounded-xl p-6 bg-white flex gap-4 items-start
-                hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-              >
-                <span className="text-red-600 text-3xl group-hover:scale-110 transition">
-                  {item.icon}
-                </span>
-                <p className="font-medium">{item.text}</p>
-              </div>
-            ))}
+  {/* Background Effects */}
+  <div className="absolute top-20 left-10 w-52 h-52 bg-red-100 blur-3xl rounded-full opacity-30"></div>
+  <div className="absolute bottom-10 right-10 w-52 h-52 bg-indigo-100 blur-3xl rounded-full opacity-30"></div>
+
+  <div className="max-w-7xl mx-auto px-4 relative z-10">
+
+    {/* Heading */}
+    <div className="text-center mb-14">
+      <span className="inline-block text-red-500 font-semibold tracking-[3px] uppercase text-sm mb-3">
+        Why Choose Us
+      </span>
+
+      <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">
+        What We Offer
+      </h2>
+    </div>
+
+    {/* Compact Modern Grid */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      {[
+        {
+          icon: <FaLaptopCode />,
+          title: "TEF & TCF Prep",
+        },
+
+        {
+          icon: <FaBolt />,
+          title: "Fast-Track Learning",
+        },
+
+        {
+          icon: <FaUserFriends />,
+          title: "Small Live Batches",
+        },
+
+        {
+          icon: <FaChalkboardTeacher />,
+          title: "1:1 Mentorship",
+        },
+
+        {
+          icon: <FaClock />,
+          title: "Flexible Timings",
+        },
+
+        {
+          icon: <FaCertificate />,
+          title: "Certified Tutors",
+        },
+
+      ].map((item, i) => (
+
+        <div
+          key={i}
+          className="group relative bg-white border border-gray-100 rounded-2xl px-6 py-5 flex items-center gap-5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+        >
+
+          {/* Hover Glow */}
+          <div className="absolute inset-0 bg-gradient-to-r from-red-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition duration-300"></div>
+
+          {/* Icon */}
+          <div className="
+            w-14 h-14 rounded-2xl
+            bg-gradient-to-br from-red-50 to-white
+            border border-red-100
+            flex items-center justify-center
+            text-red-500 text-2xl
+            shadow-sm
+            group-hover:scale-110
+            group-hover:rotate-3
+            transition-all duration-300
+          ">
+            {item.icon}
           </div>
+
+          {/* Text */}
+          <div className="relative z-10">
+            <h3 className="font-semibold text-lg text-gray-900 group-hover:text-red-600 transition">
+              {item.title}
+            </h3>
+
+            <p className="text-sm text-gray-500 mt-1">
+              Interactive & practical learning
+            </p>
+          </div>
+
         </div>
-      </section>
+
+      ))}
+
+    </div>
+  </div>
+</section>
 
       {/* ================= STATS ================= */}
       <section className="bg-red-50 py-16">
@@ -177,7 +448,7 @@ const CourseInfo = () => {
       <section className="py-12">
         <div className="text-center">
           <p className="text-gray-600 mb-6">
-            Learners from Toronto, Vancouver, Calgary & Montreal
+            Learners from York Centre, Vancouver, Calgary & Montreal
           </p>
           <div className="flex justify-center gap-4">
             {[10, 20, 30, 40, 50].map((i) => (

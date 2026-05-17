@@ -21,3 +21,22 @@
 .animate-fadeIn {
   animation: fadeIn 0.25s ease-out;
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-50% - 12px));
+  }
+}
+
+.animate-scroll {
+  width: max-content;
+  animation: scroll 22s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}

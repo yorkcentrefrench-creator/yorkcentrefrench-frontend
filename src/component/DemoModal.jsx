@@ -30,14 +30,15 @@ export default function DemoModal({ open, onClose }) {
       setLoading(true);
 
       const response = await fetch(
-        "https://york-centre-api.onrender.com/book-demo",
+        "http://10.223.103.28/book-demo",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            fullName: formData.name,
-            email: formData.email,
-            description: formData.message
+              name: formData.name,
+              email: formData.email,
+              mobile_number: formData.mobile_number,
+              message: formData.message
           })
         }
       );
