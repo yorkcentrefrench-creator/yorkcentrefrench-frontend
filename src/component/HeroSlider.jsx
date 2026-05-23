@@ -18,6 +18,7 @@ const slides = [
 ];
 
 const INTERVAL = 4000; // ms
+const TRANSITION_MS = 500;
 
 const HeroSlider = () => {
   // For smooth infinite looping, duplicate slides: [last, ...slides, first]
@@ -32,22 +33,33 @@ const HeroSlider = () => {
   const [paused, setPaused] = useState(false);
   const showDots = slides.length > 1;
   const trackRef = useRef(null);
+  const isAnimatingRef = useRef(false);
 
   // Real index for dots (0-based within original slides)
   const realIndex = ((index - 1) % slides.length + slides.length) % slides.length;
 
   const goNext = useCallback(() => {
+    if (isAnimatingRef.current || slides.length <= 1) return;
+    isAnimatingRef.current = true;
     setIsTransitioning(true);
-    setIndex((prev) => prev + 1);
-  }, []);
+    setIndex((prev) => Math.min(prev + 1, extendedSlides.length - 1));
+  }, [extendedSlides.length]);
 
   const goPrev = useCallback(() => {
+    if (isAnimatingRef.current || slides.length <= 1) return;
+    isAnimatingRef.current = true;
     setIsTransitioning(true);
-    setIndex((prev) => prev - 1);
+    setIndex((prev) => Math.max(prev - 1, 0));
   }, []);
 
   // After transition ends, silently jump if we're on a clone
-  const handleTransitionEnd = useCallback(() => {
+  const handleTransitionEnd = useCallback((event) => {
+    if (event.target !== trackRef.current || event.propertyName !== "transform") {
+      return;
+    }
+
+    isAnimatingRef.current = false;
+
     if (index === 0) {
       // We've slid to the cloned last slide (before real first)
       setIsTransitioning(false);
@@ -57,6 +69,26 @@ const HeroSlider = () => {
       setIsTransitioning(false);
       setIndex(1);
     }
+  }, [index, extendedSlides.length]);
+
+  // If the browser misses transitionend, reset from cloned slides before the
+  // next auto-play tick can move the track into an empty white panel.
+  useEffect(() => {
+    if (!isAnimatingRef.current) return;
+
+    const id = window.setTimeout(() => {
+      isAnimatingRef.current = false;
+
+      if (index === 0) {
+        setIsTransitioning(false);
+        setIndex(slides.length);
+      } else if (index === extendedSlides.length - 1) {
+        setIsTransitioning(false);
+        setIndex(1);
+      }
+    }, TRANSITION_MS + 100);
+
+    return () => window.clearTimeout(id);
   }, [index, extendedSlides.length]);
 
   // Auto-play
@@ -127,6 +159,8 @@ const HeroSlider = () => {
               <button
                 key={i}
                 onClick={() => {
+                  if (isAnimatingRef.current || index === i + 1) return;
+                  isAnimatingRef.current = true;
                   setIsTransitioning(true);
                   setIndex(i + 1);
                 }}

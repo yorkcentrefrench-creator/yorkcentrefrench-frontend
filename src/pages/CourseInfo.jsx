@@ -11,8 +11,6 @@ import {
 import TfaApproach from "../component/TfaApproach";
 import ReviewCard from "../component/ReviewCard";
 import FAQSection from "../component/FAQSection";
-import { useNavigate } from "react-router-dom";
-import { loadRazorpay } from "../utils/razorpay";
 import DemoModal from "../component/DemoModal";
 import HeroSlider from "../component/HeroSlider";
 const reviews = [
@@ -41,6 +39,8 @@ const reviews = [
     color: "#a78bfa",
   },
 ];
+
+const AFFILIATION_MARQUEE_COPIES = 6;
 
 
 const CourseInfo = () => {
@@ -156,9 +156,12 @@ const CourseInfo = () => {
 
             {/* ================= AFFILIATIONS ================= */}
       <section className="py-10 bg-gradient-to-b from-white to-gray-50 overflow-hidden w-full">
-  <div className="flex animate-scroll whitespace-nowrap gap-0">
+  <div
+    className="flex animate-scroll whitespace-nowrap gap-0"
+    style={{ "--scroll-distance": `-${100 / AFFILIATION_MARQUEE_COPIES}%` }}
+  >
 
-  {[1,2].map((_, index) => (
+  {Array.from({ length: AFFILIATION_MARQUEE_COPIES }).map((_, index) => (
     <React.Fragment key={index}>
 
       {/* Logo 1 */}
@@ -423,45 +426,6 @@ const CourseInfo = () => {
     </div>
   </div>
 </section>
-
-      {/* ================= STATS ================= */}
-      <section className="bg-red-50 py-16">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-center">
-          <div>
-            <p className="text-4xl font-bold text-red-600">200+</p>
-            <p className="font-semibold">Certified Tutors</p>
-          </div>
-          <div>
-            <p className="text-4xl font-bold text-red-600">1,000+</p>
-            <p className="font-semibold">Active Learners</p>
-          </div>
-          <div>
-            <p className="text-4xl font-bold text-red-600 flex justify-center gap-1">
-              4.9 <FaStar />
-            </p>
-            <p className="font-semibold">Average Rating</p>
-          </div>
-        </div>
-      </section>
-
-      {/* ================= STUDENT AVATARS ================= */}
-      <section className="py-12">
-        <div className="text-center">
-          <p className="text-gray-600 mb-6">
-            Learners from York Centre, Vancouver, Calgary & Montreal
-          </p>
-          <div className="flex justify-center gap-4">
-            {[10, 20, 30, 40, 50].map((i) => (
-              <img
-                key={i}
-                src={`https://randomuser.me/api/portraits/men/${i}.jpg`}
-                alt="Student"
-                className="w-12 h-12 rounded-full border-2 border-white shadow"
-              />
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ================= PRICING ================= */}
 <section className="py-24 bg-gradient-to-br from-slate-50 via-white to-indigo-50">

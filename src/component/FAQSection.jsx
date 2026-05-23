@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 
-const FAQItem = ({ question, answer }) => {
-  const [open, setOpen] = useState(false);
-
+const FAQItem = ({ question, answer, open, onToggle }) => {
   return (
     <div
       className={`bg-white rounded-2xl p-5 md:p-6 border transition-all duration-300
@@ -12,7 +10,7 @@ const FAQItem = ({ question, answer }) => {
     >
       {/* Question */}
       <button
-        onClick={() => setOpen(!open)}
+        onClick={onToggle}
         className="w-full flex justify-between items-start gap-4 text-left"
       >
         <span
@@ -45,6 +43,8 @@ const FAQItem = ({ question, answer }) => {
 };
 
 const FAQSection = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+
   const faqs = [
     {
       question:
@@ -75,6 +75,11 @@ const FAQSection = () => {
     },
   ];
 
+  const faqColumns = [
+    faqs.filter((_, idx) => idx % 2 === 0),
+    faqs.filter((_, idx) => idx % 2 !== 0),
+  ];
+
   return (
     <section className="w-full py-20 bg-gradient-to-b from-red-50 to-white">
       {/* Header */}
@@ -89,10 +94,38 @@ const FAQSection = () => {
         </p>
       </div>
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 px-4 md:px-8">
-        {faqs.map((item, idx) => (
-          <FAQItem key={idx} {...item} />
-        ))}
+      <div className="max-w-6xl mx-auto px-4 md:px-8">
+        <div className="flex flex-col gap-8 md:hidden">
+          {faqs.map((item, idx) => (
+            <FAQItem
+              key={idx}
+              {...item}
+              open={openIndex === idx}
+              onToggle={() => setOpenIndex(openIndex === idx ? null : idx)}
+            />
+          ))}
+        </div>
+
+        <div className="hidden md:grid md:grid-cols-2 gap-8">
+          {faqColumns.map((column, columnIdx) => (
+            <div key={columnIdx} className="flex flex-col gap-8">
+              {column.map((item, itemIdx) => {
+                const faqIndex = columnIdx + itemIdx * 2;
+
+                return (
+                  <FAQItem
+                    key={faqIndex}
+                    {...item}
+                    open={openIndex === faqIndex}
+                    onToggle={() =>
+                      setOpenIndex(openIndex === faqIndex ? null : faqIndex)
+                    }
+                  />
+                );
+              })}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
