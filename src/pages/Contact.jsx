@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
+import { submitBookDemo } from "../utils/bookDemo";
 
 import {
   FaMapMarkerAlt,
@@ -23,7 +24,6 @@ const Contact = () => {
   });
 
   const [loading, setLoading] = useState(false);
-  const [popup, setPopup] = useState(null); // success | error
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -32,7 +32,11 @@ const Contact = () => {
  const handleSubmit = async (e) => {
   e.preventDefault();
 
-  if (!formData.name || !formData.email || !formData.message) {
+  if (
+    !formData.name.trim() ||
+    !formData.email.trim() ||
+    !formData.message.trim()
+  ) {
     toast.error("Please fill all required fields");
     return;
   }
@@ -40,20 +44,12 @@ const Contact = () => {
   try {
     setLoading(true);
 
-    const response = await fetch(
-      "https://york-centre-api.onrender.com/book-demo",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      }
-    );
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      throw new Error(data.message || "Failed to send message");
-    }
+    await submitBookDemo({
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      mobile_number: formData.mobile_number.trim(),
+      message: formData.message.trim(),
+    });
 
     // 🎉 SUCCESS TOAST
     toast.success(
@@ -134,20 +130,6 @@ const Contact = () => {
             <h2 className="text-2xl font-bold mb-6 text-gray-800">
               Send Us a Message
             </h2>
-
-            {/* POPUP */}
-            {popup && (
-              <div
-                className={`mb-5 px-4 py-3 rounded text-sm font-medium
-                ${
-                  popup.type === "success"
-                    ? "bg-emerald-100 text-emerald-700"
-                    : "bg-red-100 text-red-700"
-                }`}
-              >
-                {popup.message}
-              </div>
-            )}
 
             <form className="space-y-5" onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-5">
