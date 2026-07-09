@@ -82,7 +82,7 @@ export default function Header() {
             )}
           </div>
 
-          <Link className="hover:text-red-500 transition" to="/course-info">
+          <Link className="hover:text-red-500 transition" to="/course-info#classes">
             Classes
           </Link>
           <Link className="hover:text-red-500 transition" to="/whatsapp-community">
@@ -117,30 +117,31 @@ export default function Header() {
       {open && (
         <div className="lg:hidden bg-gradient-to-br from-red-500 to-red-600 text-white px-6 py-6 animate-slideDown">
           <nav className="flex flex-col gap-4 font-semibold">
-            <Link to="/about">About Us</Link>
-            <Link to="/faq">FAQ</Link>
+            <Link to="/about" onClick={() => setOpen(false)}>About Us</Link>
+            <Link to="/faq" onClick={() => setOpen(false)}>FAQ</Link>
 
             <details>
               <summary className="cursor-pointer">Levels</summary>
               <div className="ml-4 mt-2 flex flex-col gap-2 text-sm">
-                <Link to="/beginner">BEGINNER (A1 & A2)</Link>
-                <Link to="/intermediate">INTERMEDIATE (B1)</Link>
-                <Link to="/professional">PROFESSIONAL (B2)</Link>
-                <Link to="/group-classes">GROUP CLASSES</Link>
-                <Link to="/speaking">SPEAKING</Link>
+                <Link to="/beginner" onClick={() => setOpen(false)}>BEGINNER (A1 & A2)</Link>
+                <Link to="/intermediate" onClick={() => setOpen(false)}>INTERMEDIATE (B1)</Link>
+                <Link to="/professional" onClick={() => setOpen(false)}>PROFESSIONAL (B2)</Link>
+                <Link to="/group-classes" onClick={() => setOpen(false)}>GROUP CLASSES</Link>
+                <Link to="/speaking" onClick={() => setOpen(false)}>SPEAKING</Link>
 
-                <Link to="/private-tutoring">PRIVATE TUTORING</Link>
-                <Link to="/professional-tef">PROFESSIONAL (B2 + TEF)</Link>
-                <Link to="/exam-preparation">TEF & DELF EXAM PREPARATION</Link>
+                <Link to="/private-tutoring" onClick={() => setOpen(false)}>PRIVATE TUTORING</Link>
+                <Link to="/professional-tef" onClick={() => setOpen(false)}>PROFESSIONAL (B2 + TEF)</Link>
+                <Link to="/exam-preparation" onClick={() => setOpen(false)}>TEF & DELF EXAM PREPARATION</Link>
               </div>
             </details>
 
-            <Link to="/course-info">Classes</Link>
-            <Link to="/whatsapp-community">Whatsapp Community</Link>
-            <Link to="/contact">Contact Us</Link>
+            <Link to="/course-info#classes" onClick={() => setOpen(false)}>Classes</Link>
+            <Link to="/whatsapp-community" onClick={() => setOpen(false)}>Whatsapp Community</Link>
+            <Link to="/contact" onClick={() => setOpen(false)}>Contact Us</Link>
 
             <Link
               to="/course-info"
+              onClick={() => setOpen(false)}
               className="mt-4 bg-white text-black px-5 py-2 rounded-lg text-center font-semibold"
             >
               COURSE INFORMATION

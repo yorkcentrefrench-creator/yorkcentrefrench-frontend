@@ -68,32 +68,27 @@ const demoSessionBenefits = [
 
 const testimonialImages = [
   {
-    src: "/class1.jpg",
-    alt: "Online French class grammar lesson screenshot",
-    label: "Live grammar practice",
+    src: "/class4.jpeg",
+    alt: "Online French class testimonial slide",
+    label: "Student success story",
     title: "Interactive French Lesson",
-    description: "Students learn grammar through live examples and guided correction.",
+    description: "Students learn through live examples, guided correction, and practical class support.",
   },
   {
-    src: "/class2.jpg",
-    alt: "Online French class pronunciation lesson screenshot",
-    label: "Small group speaking drills",
+    src: "/class5.jpeg",
+    alt: "Online French class testimonial slide",
+    label: "Live class results",
     title: "Small Batch Doubt Solving",
     description: "Focused classroom time with tutor feedback and clear explanations.",
-  },
-  {
-    src: "/class3.jpg",
-    alt: "Online French class alphabet lesson screenshot",
-    label: "TEF-ready foundations",
-    title: "Pronunciation Foundations",
-    description: "Sound-by-sound practice designed to build confident speaking.",
   },
 ];
 
 
 const CourseInfo = () => {
   React.useEffect(() => {
-    window.scrollTo(0, 0);
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
   }, []);
   const [openDemo, setOpenDemo] = useState(false);
   const [activeClassSlide, setActiveClassSlide] = useState(0);
@@ -616,7 +611,7 @@ const CourseInfo = () => {
       </section>
 
       {/* ================= PRICING ================= */}
-<section className="py-24 bg-gradient-to-br from-slate-50 via-white to-indigo-50">
+<section id="classes" className="scroll-mt-28 py-24 bg-gradient-to-br from-slate-50 via-white to-indigo-50">
   <div className="max-w-7xl mx-auto px-4">
     <h2 className="text-center text-3xl md:text-4xl font-bold text-slate-900 mb-4">
       Online French Class Plans

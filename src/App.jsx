@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Header from "./component/Header";
 import Footer from "./component/Footer";
 import CourseInfo from "./pages/CourseInfo";
@@ -19,6 +20,26 @@ import PaymentSuccess from "./pages/PaymentSuccess";
 import Speaking from "./pages/Speaking";
 import { Toaster } from "react-hot-toast";
 
+function ScrollToHash() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const target = document.getElementById(hash.slice(1));
+      if (target) {
+        window.setTimeout(() => {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 0);
+      }
+      return;
+    }
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pathname, hash]);
+
+  return null;
+}
+
 function App() {
   return (
     <BrowserRouter>
@@ -36,6 +57,7 @@ function App() {
       />
 
       <Header />
+      <ScrollToHash />
 
       <Routes>
         <Route path="/" element={<CourseInfo />} />
